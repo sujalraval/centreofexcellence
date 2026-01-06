@@ -1,5 +1,4 @@
 // src/components/AboutSnapshot.jsx
-import React from "react";
 import { Target, Eye } from "lucide-react";
 
 const AboutSnapshot = () => {
