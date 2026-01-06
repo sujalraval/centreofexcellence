@@ -1,9 +1,14 @@
-// src/components/HeroSection.jsx
-import React from "react";
 import { Play, ChevronRight, CheckCircle } from "lucide-react";
 
+/* -------------------- TYPES -------------------- */
+interface StatProps {
+  value: string;
+  label: string;
+}
+
+/* -------------------- COMPONENT -------------------- */
 const HeroSection = () => {
-  const features = [
+  const features: string[] = [
     "BCI Approved Program",
     "IPR Specialization",
     "Industry Partnerships",
@@ -11,7 +16,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       {/* Solid Color Background */}
       <div
         className="absolute inset-0"
@@ -46,9 +51,9 @@ const HeroSection = () => {
             {/* Features */}
             <div className="mb-10">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl">
-                {features.map((feature, index) => (
+                {features.map((feature) => (
                   <div
-                    key={index}
+                    key={feature}
                     className="flex items-center gap-3 text-white/90"
                   >
                     <CheckCircle className="w-5 h-5 text-emerald-300" />
@@ -69,7 +74,10 @@ const HeroSection = () => {
               </a>
 
               <div className="flex items-center gap-4">
-                <button className="flex items-center gap-3 text-white hover:text-white/80 transition">
+                <button
+                  type="button"
+                  className="flex items-center gap-3 text-white hover:text-white/80 transition"
+                >
                   <div className="w-12 h-12 rounded-full border border-white/40 flex items-center justify-center">
                     <Play className="w-5 h-5" />
                   </div>
@@ -102,11 +110,14 @@ const HeroSection = () => {
   );
 };
 
-const Stat = ({ value, label }) => (
-  <div className="text-center">
-    <div className="text-3xl font-bold text-white mb-1">{value}</div>
-    <div className="text-white/70 text-sm">{label}</div>
-  </div>
-);
+/* -------------------- STAT COMPONENT -------------------- */
+const Stat = ({ value, label }: StatProps) => {
+  return (
+    <div className="text-center">
+      <div className="text-3xl font-bold text-white mb-1">{value}</div>
+      <div className="text-white/70 text-sm">{label}</div>
+    </div>
+  );
+};
 
 export default HeroSection;
