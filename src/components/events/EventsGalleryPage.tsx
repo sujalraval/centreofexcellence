@@ -1,34 +1,36 @@
 // src/components/events/EventsGalleryPage.tsx
 import { Link } from "react-router-dom";
-import img1 from "../../assets/studentactivities/1.png";
-import img2 from "../../assets/studentactivities/2.png";
-import img3 from "../../assets/studentactivities/3.png";
-import img4 from "../../assets/studentactivities/4.png";
-import img5 from "../../assets/studentactivities/5.png";
-import img6 from "../../assets/studentactivities/6.png";
+import { useState } from "react";
+
+interface EventImage {
+  id: number;
+  src: string;
+  alt: string;
+  category: string;
+}
 
 const EventsGalleryPage = () => {
   // Event images data with more entries for the gallery page
-  const allEventImages = [
-    { id: 1, src: img1, alt: "Cultural Fest", category: "cultural" },
-    { id: 2, src: img2, alt: "Sports Event", category: "sports" },
-    { id: 3, src: img3, alt: "Tech Workshop", category: "academic" },
-    { id: 4, src: img4, alt: "Music Concert", category: "cultural" },
-    { id: 5, src: img5, alt: "Debate Competition", category: "academic" },
-    { id: 6, src: img6, alt: "Art Exhibition", category: "arts" },
-    { id: 7, src: img1, alt: "Science Fair", category: "academic" },
-    { id: 8, src: img2, alt: "Dance Competition", category: "cultural" },
-    { id: 9, src: img3, alt: "Chess Tournament", category: "sports" },
-    { id: 10, src: img4, alt: "Literary Festival", category: "academic" },
-    { id: 11, src: img5, alt: "Photography Exhibition", category: "arts" },
-    { id: 12, src: img6, alt: "Yoga Session", category: "sports" },
+  const allEventImages: EventImage[] = [
+    { id: 1, src: "/studentactivities/1.png", alt: "Cultural Fest", category: "cultural" },
+    { id: 2, src: "/studentactivities/2.png", alt: "Sports Event", category: "sports" },
+    { id: 3, src: "/studentactivities/3.png", alt: "Tech Workshop", category: "academic" },
+    { id: 4, src: "/studentactivities/4.png", alt: "Music Concert", category: "cultural" },
+    { id: 5, src: "/studentactivities/5.png", alt: "Debate Competition", category: "academic" },
+    { id: 6, src: "/studentactivities/6.png", alt: "Art Exhibition", category: "arts" },
+    { id: 7, src: "/studentactivities/1.png", alt: "Science Fair", category: "academic" },
+    { id: 8, src: "/studentactivities/2.png", alt: "Dance Competition", category: "cultural" },
+    { id: 9, src: "/studentactivities/3.png", alt: "Chess Tournament", category: "sports" },
+    { id: 10, src: "/studentactivities/4.png", alt: "Literary Festival", category: "academic" },
+    { id: 11, src: "/studentactivities/5.png", alt: "Photography Exhibition", category: "arts" },
+    { id: 12, src: "/studentactivities/6.png", alt: "Yoga Session", category: "sports" },
   ];
 
   const categories = ["all", "cultural", "sports", "academic", "arts"];
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   // Filter images based on selected category
-  const filteredImages =
+  const filteredImages: EventImage[] =
     selectedCategory === "all"
       ? allEventImages
       : allEventImages.filter((image) => image.category === selectedCategory);
