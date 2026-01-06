@@ -1,5 +1,4 @@
 // src/components/home/AcademicPrograms.tsx
-import React from "react";
 
 const AcademicPrograms = () => {
   const courseHighlights = [

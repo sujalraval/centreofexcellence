@@ -1,5 +1,4 @@
 // src/components/home/EventsGallery.tsx
-import React from "react";
 import { Link } from "react-router-dom";
 import img1 from "../../assets/studentactivities/1.png";
 import img2 from "../../assets/studentactivities/2.png";

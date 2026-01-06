@@ -1,5 +1,4 @@
 // src/components/QuickInfoPanel.jsx
-import React from "react";
 
 const stats = [
   { value: "30+", label: "Research Papers" },

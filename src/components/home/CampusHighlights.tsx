@@ -1,5 +1,4 @@
 // src/components/CampusHighlights.jsx
-import React from "react";
 import {
   Library,
   Cpu,

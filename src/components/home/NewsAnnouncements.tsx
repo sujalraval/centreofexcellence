@@ -1,5 +1,4 @@
 // src/components/NewsAnnouncements.jsx
-import React from "react";
 import { Calendar, Clock, ArrowRight, Megaphone } from "lucide-react";
 
 const NewsAnnouncements = () => {

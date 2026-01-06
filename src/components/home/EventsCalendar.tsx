@@ -1,5 +1,4 @@
 // src/components/EventsCalendar.jsx
-import React from "react";
 import { MapPin, Users, Clock, ExternalLink } from "lucide-react";
 
 const EventsCalendar = () => {
