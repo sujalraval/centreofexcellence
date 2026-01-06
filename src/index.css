@@ -1,5 +1,4 @@
 @import "tailwindcss";
-/* Tailwind CSS Base Styles */
 @layer base {
   body {
     font-family: "Poppins", -apple-system, BlinkMacSystemFont, SF Pro Text,
