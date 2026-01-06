@@ -12,18 +12,78 @@ interface EventImage {
 const EventsGalleryPage = () => {
   // Event images data with more entries for the gallery page
   const allEventImages: EventImage[] = [
-    { id: 1, src: "/studentactivities/1.png", alt: "Cultural Fest", category: "cultural" },
-    { id: 2, src: "/studentactivities/2.png", alt: "Sports Event", category: "sports" },
-    { id: 3, src: "/studentactivities/3.png", alt: "Tech Workshop", category: "academic" },
-    { id: 4, src: "/studentactivities/4.png", alt: "Music Concert", category: "cultural" },
-    { id: 5, src: "/studentactivities/5.png", alt: "Debate Competition", category: "academic" },
-    { id: 6, src: "/studentactivities/6.png", alt: "Art Exhibition", category: "arts" },
-    { id: 7, src: "/studentactivities/1.png", alt: "Science Fair", category: "academic" },
-    { id: 8, src: "/studentactivities/2.png", alt: "Dance Competition", category: "cultural" },
-    { id: 9, src: "/studentactivities/3.png", alt: "Chess Tournament", category: "sports" },
-    { id: 10, src: "/studentactivities/4.png", alt: "Literary Festival", category: "academic" },
-    { id: 11, src: "/studentactivities/5.png", alt: "Photography Exhibition", category: "arts" },
-    { id: 12, src: "/studentactivities/6.png", alt: "Yoga Session", category: "sports" },
+    {
+      id: 1,
+      src: "/studentactivities/1.png",
+      alt: "Cultural Fest",
+      category: "cultural",
+    },
+    {
+      id: 2,
+      src: "/studentactivities/2.png",
+      alt: "Sports Event",
+      category: "sports",
+    },
+    {
+      id: 3,
+      src: "/studentactivities/3.png",
+      alt: "Tech Workshop",
+      category: "academic",
+    },
+    {
+      id: 4,
+      src: "/studentactivities/4.png",
+      alt: "Music Concert",
+      category: "cultural",
+    },
+    {
+      id: 5,
+      src: "/studentactivities/5.png",
+      alt: "Debate Competition",
+      category: "academic",
+    },
+    {
+      id: 6,
+      src: "/studentactivities/6.png",
+      alt: "Art Exhibition",
+      category: "arts",
+    },
+    {
+      id: 7,
+      src: "/studentactivities/1.png",
+      alt: "Science Fair",
+      category: "academic",
+    },
+    {
+      id: 8,
+      src: "/studentactivities/2.png",
+      alt: "Dance Competition",
+      category: "cultural",
+    },
+    {
+      id: 9,
+      src: "/studentactivities/3.png",
+      alt: "Chess Tournament",
+      category: "sports",
+    },
+    {
+      id: 10,
+      src: "/studentactivities/4.png",
+      alt: "Literary Festival",
+      category: "academic",
+    },
+    {
+      id: 11,
+      src: "/studentactivities/5.png",
+      alt: "Photography Exhibition",
+      category: "arts",
+    },
+    {
+      id: 12,
+      src: "/studentactivities/6.png",
+      alt: "Yoga Session",
+      category: "sports",
+    },
   ];
 
   const categories = ["all", "cultural", "sports", "academic", "arts"];

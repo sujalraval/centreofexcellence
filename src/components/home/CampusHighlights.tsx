@@ -8,6 +8,10 @@ import {
   Trophy,
   BookOpen,
   Wifi,
+  Database,
+  FileText,
+  Calendar,
+  Newspaper,
 } from "lucide-react";
 
 const CampusHighlights = () => {
@@ -67,6 +71,34 @@ const CampusHighlights = () => {
       count: "24/7 Access",
       icon: <Wifi className="w-8 h-8" />,
       image: "/campus/wifi.png",
+    },
+    {
+      title: "LMS & SIS",
+      description: "Learning Management and Student Information Systems",
+      count: "Digital Platform",
+      icon: <Database className="w-8 h-8" />,
+      image: "/campus/computer-lab.jpg",
+    },
+    {
+      title: "Institutional Repository",
+      description: "Digital archive of research and publications",
+      count: "Academic Resources",
+      icon: <FileText className="w-8 h-8" />,
+      image: "/campus/library.jpg",
+    },
+    {
+      title: "Conference",
+      description: "Academic conferences and symposiums",
+      count: "Research Events",
+      icon: <Calendar className="w-8 h-8" />,
+      image: "/campus/moot-court.jpg",
+    },
+    {
+      title: "Journal",
+      description: "Academic publications and research papers",
+      count: "Scholarly Works",
+      icon: <Newspaper className="w-8 h-8" />,
+      image: "/campus/computer-lab.jpg",
     },
   ];
 
