@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, SF Pro Text,
+      SF Pro Display, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+
+    font-size: 15.5px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+
+    @apply text-gray-900 bg-white antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold text-gray-900;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Add these to your existing index.css */
+
+/* Smooth gradient overlay effect */
+.bg-overlay {
+  position: relative;
+}
+
+.bg-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 14, 114, 0.9) 0%,
+    rgba(10, 14, 114, 0.85) 100%
+  );
+}
+
+/* Modern shadow effects */
+.shadow-elegant {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-minimal {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Modern border radius */
+.rounded-modern {
+  border-radius: 20px;
+}
+
+/* Text shadow for better readability on images */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
