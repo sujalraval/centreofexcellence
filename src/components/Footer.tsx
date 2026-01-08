@@ -3,7 +3,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  Globe,
   Facebook,
   Twitter,
   Linkedin,
@@ -25,20 +24,19 @@ const Footer = () => {
 
   const policies = [
     { name: "Privacy Policy", url: "/privacy" },
-    { name: "Accessibility Statement", url: "/accessibility" },
-    { name: "Anti-Ragging Policy", url: "/anti-ragging" },
-    { name: "RTI", url: "/rti" },
+    { name: "Refund Policy", url: "/accessibility" },
+    { name: "Terms & Conditions", url: "/terms" },
+    { name: "Disclaimer", url: "/rti" },
     { name: "Grievance Redressal", url: "/grievance" },
-    { name: "Code of Conduct", url: "/conduct" },
   ];
 
   const portals = [
-    { name: "Student Portal (SIS)", url: "/sis" },
-    { name: "Learning Management System", url: "/lms" },
-    { name: "Faculty Portal", url: "/faculty" },
-    { name: "Admin Portal", url: "/admin" },
-    { name: "Online Admission", url: "/admission-portal" },
-    { name: "E-Library", url: "/e-library" },
+    { name: "Student Portal (SIS)", url: "https://lms.coesolgu.edu.in/" },
+    { name: "Learning Management System", url: "https://lms.coesolgu.edu.in/" },
+    { name: "Faculty Portal", url: "https://admin.coesolgu.edu.in/" },
+    { name: "Admin Portal", url: "https://admin.coesolgu.edu.in/" },
+    { name: "Online Admission", url: "https://gcas.gujgov.edu.in/" },
+    { name: "E-Library", url: "https://Library.coesolgu.edu.in/" },
   ];
 
   const socialLinks = [
@@ -50,7 +48,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gu-dark text-white">
+    <footer className="bg-gu-[#0a0e72e6] font-semibold text-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -68,13 +66,13 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold">Centre of Excellence</h3>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-[#0a0e72e6]">
                   University School of Law
                 </p>
               </div>
             </div>
 
-            <p className="text-gray-400 mb-6">
+            <p className="text-[#0a0e72e6] mb-6 font- text-justify">
               Premier institution for integrated legal education with
               specialization in Intellectual Property Rights, recognized by Bar
               Council of India.
@@ -86,7 +84,7 @@ const Footer = () => {
                   key={index}
                   href={social.url}
                   aria-label={social.label}
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gu-primary transition"
+                  className="w-10 h-10 bg-[#0a0e72e6] rounded-full flex items-center justify-center hover:underline transition"
                 >
                   {social.icon}
                 </a>
@@ -102,9 +100,9 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.url}
-                    className="text-gray-400 hover:text-[#0a0e72e6] transition flex items-center"
+                    className="text-[#0a0e72e6] hover:underline transition flex items-center"
                   >
-                    <span className="w-2 h-2 bg-gu-primary rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-gu-[#0a0e72e6] rounded-full mr-3"></span>
                     {link.name}
                   </a>
                 </li>
@@ -117,13 +115,15 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-6">Policies & Portals</h4>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <h5 className="font-semibold mb-3 text-gray-300">Policies</h5>
+                <h5 className="font-semibold mb-3 text-[#0a0e72e6]">
+                  Policies
+                </h5>
                 <ul className="space-y-2">
                   {policies.map((policy, index) => (
                     <li key={index}>
                       <a
                         href={policy.url}
-                        className="text-gray-400 hover:text-[#0a0e72e6] text-sm"
+                        className="text-[#0a0e72e6] hover:text-[#0a0e72e6] hover:underline text-sm"
                       >
                         {policy.name}
                       </a>
@@ -132,7 +132,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h5 className="font-semibold mb-3 text-gray-300">
+                <h5 className="font-semibold mb-3 text-[#0a0e72e6]">
                   Web Portals
                 </h5>
                 <ul className="space-y-2">
@@ -140,7 +140,7 @@ const Footer = () => {
                     <li key={index}>
                       <a
                         href={portal.url}
-                        className="text-gray-400 hover:text-[#0a0e72e6] text-sm"
+                        className="text-[#0a0e72e6] hover:text-[#0a0e72e6] hover:underline text-sm"
                       >
                         {portal.name}
                       </a>
@@ -158,7 +158,7 @@ const Footer = () => {
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 text-gu-primary mr-3 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-gray-400">
+                  <p className="text-[#0a0e72e6] text-justify">
                     Centre of Excellence
                     <br />
                     University School of Law
@@ -174,29 +174,19 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-gu-primary mr-3" />
                 <a
                   href="tel:+917926123456"
-                  className="text-gray-400 hover:text-[#0a0e72e6]"
+                  className="text-[#0a0e72e6] hover:text-[#0a0e72e6] hover:underline"
                 >
-                  +91 79 2612 3456
+                  +91 97249 70166
                 </a>
               </div>
 
               <div className="flex items-center">
                 <Mail className="w-5 h-5 text-gu-primary mr-3" />
                 <a
-                  href="mailto:coe@guni.ac.in"
-                  className="text-gray-400 hover:text-[#0a0e72e6]"
+                  href="mailto:centreofexcellencegu@gmail.com"
+                  className="text-[#0a0e72e6] hover:text-[#0a0e72e6] hover:underline"
                 >
-                  coe@guni.ac.in
-                </a>
-              </div>
-
-              <div className="flex items-center">
-                <Globe className="w-5 h-5 text-gu-primary mr-3" />
-                <a
-                  href="https://coe.guni.ac.in"
-                  className="text-gray-400 hover:text-[#0a0e72e6]"
-                >
-                  coe.guni.ac.in
+                  centreofexcellencegu@gmail.com
                 </a>
               </div>
             </div>
@@ -209,14 +199,14 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-6 mb-4 md:mb-0">
-              <span className="text-gray-400 text-sm">
+              <span className="text-[#0a0e72e6] text-sm">
                 © {new Date().getFullYear()} Centre of Excellence, Gujarat
                 University. All rights reserved.
               </span>
             </div>
 
             <div className="flex items-center space-x-6">
-              <div className="flex items-center text-sm text-gray-400">
+              <div className="flex items-center text-sm text-[#0a0e72e6]">
                 <span className="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></span>
                 Visitors: 12,458
               </div>

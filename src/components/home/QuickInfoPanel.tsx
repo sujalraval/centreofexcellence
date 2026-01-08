@@ -11,27 +11,22 @@ const badges = [
   {
     logo: "/gujaratuniversity.png",
     title: "Gujarat University",
-    description: "Established 1949",
   },
   {
     logo: "/naac_A++.png",
-    title: "NAAC A++",
-    description: "Accreditation",
+    title: "NAAC A+",
   },
   {
     logo: "/National_Institutional_Ranking_Framework_logo.png",
     title: "NIRF Rank",
-    description: "Top 50 Law Schools",
   },
   {
     logo: "/bci-logo.svg",
     title: "BCI Approved",
-    description: "Bar Council of India",
   },
   {
     logo: "/UGC_India_Logo.png",
     title: "UGC Recognized",
-    description: "University Grants Commission",
   },
 ];
 
@@ -41,8 +36,6 @@ const QuickInfoPanel = () => {
     <section className="relative -mt-24 z-20">
       <div className="container mx-auto px-4">
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden pt-2">
-
-
           {/* Divider */}
           {/* <div className="h-px bg-gray-200 mx-10" /> */}
 
