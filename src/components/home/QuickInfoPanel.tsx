@@ -1,13 +1,7 @@
 // src/components/QuickInfoPanel.jsx
+import { BadgeItem } from "../../types";
 
-const stats = [
-  { value: "30+", label: "Research Papers" },
-  { value: "100%", label: "Placement Support" },
-  { value: "50+", label: "Moot Court Wins" },
-  { value: "24/7", label: "Digital Library" },
-];
-
-const badges = [
+const badges: BadgeItem[] = [
   {
     logo: "/gujaratuniversity.png",
     title: "Gujarat University",
@@ -59,7 +53,7 @@ const QuickInfoPanel = () => {
                   <h3 className="text-lg font-semibold text-gu-dark">
                     {badge.title}
                   </h3>
-                  <p className="text-sm text-gray-600">{badge.description}</p>
+                  {badge.description && <p className="text-sm text-gray-600">{badge.description}</p>}
                 </div>
               ))}
             </div>

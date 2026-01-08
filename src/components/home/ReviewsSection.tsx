@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { ReviewItem, ReviewData, ReviewCategory } from "../../types";
 
 /* -------------------- DATA -------------------- */
 
-const reviewData = {
+const reviewData: ReviewData = {
   students: [
     {
       id: 1,
@@ -76,7 +77,7 @@ const reviewData = {
 
 /* -------------------- REVIEW CARD -------------------- */
 
-const ReviewCard = ({ data }) => {
+const ReviewCard = ({ data }: { data: ReviewItem }) => {
   return (
     <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
       <div className="flex items-center mb-4">
@@ -96,7 +97,7 @@ const ReviewCard = ({ data }) => {
 /* -------------------- MAIN COMPONENT -------------------- */
 
 const ReviewsSection = () => {
-  const [activeTab, setActiveTab] = useState("students");
+  const [activeTab, setActiveTab] = useState<ReviewCategory>("students");
 
   return (
     <section className="py-16 bg-gray-50">
@@ -116,7 +117,7 @@ const ReviewsSection = () => {
           {["students", "faculty", "vips"].map((tab) => (
             <button
               key={tab}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => setActiveTab(tab as ReviewCategory)}
               className={`px-6 py-2 rounded-full font-semibold transition ${
                 activeTab === tab
                   ? "bg-gu-primary text-[#0a0e72e6]"
@@ -134,7 +135,7 @@ const ReviewsSection = () => {
 
         {/* Reviews Grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {reviewData[activeTab].map((item) => (
+          {reviewData[activeTab].map((item: ReviewItem) => (
             <ReviewCard key={item.id} data={item} />
           ))}
         </div>

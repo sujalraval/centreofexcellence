@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
+import { TopBarMenuItem, MainMenuItem } from "../types";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   /* ---------- TOP BAR MENUS ---------- */
-  const topBarMenus = [
+  const topBarMenus: TopBarMenuItem[] = [
     {
       name: "Portals",
       submenu: [
@@ -88,7 +89,7 @@ const Header = () => {
   ];
 
   /* ---------- MAIN MENUS ---------- */
-  const mainMenus = [
+  const mainMenus: MainMenuItem[] = [
     { name: "Home", link: "/" },
 
     {
@@ -242,7 +243,7 @@ const Header = () => {
                         {item.column ? (
                           <>
                             <div>
-                              {item.submenu.col1.map((sub, idx) => (
+                              {(item.submenu as { col1: string[]; col2: string[] }).col1.map((sub: string, idx: number) => (
                                 <a
                                   key={idx}
                                   href="#"
@@ -253,7 +254,7 @@ const Header = () => {
                               ))}
                             </div>
                             <div>
-                              {item.submenu.col2.map((sub, idx) => (
+                              {(item.submenu as { col1: string[]; col2: string[] }).col2.map((sub: string, idx: number) => (
                                 <a
                                   key={idx}
                                   href="#"
@@ -265,7 +266,7 @@ const Header = () => {
                             </div>
                           </>
                         ) : (
-                          item.submenu.map((sub, idx) => (
+                          (Array.isArray(item.submenu) ? item.submenu : []).map((sub: string, idx: number) => (
                             <a
                               key={idx}
                               href="#"
