@@ -41,20 +41,10 @@ const QuickInfoPanel = () => {
     <section className="relative -mt-24 z-20">
       <div className="container mx-auto px-4">
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden pt-2">
-          {/* 🔹 TOP: STATS */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-10 text-center">
-            {stats.map((item, i) => (
-              <div key={i}>
-                <div className="text-3xl font-bold text-gu-dark mb-1">
-                  {item.value}
-                </div>
-                <div className="text-sm text-gray-600">{item.label}</div>
-              </div>
-            ))}
-          </div>
+
 
           {/* Divider */}
-          <div className="h-px bg-gray-200 mx-10" />
+          {/* <div className="h-px bg-gray-200 mx-10" /> */}
 
           {/* 🔹 BOTTOM: RECOGNITIONS */}
           <div className="px-8 py-12">

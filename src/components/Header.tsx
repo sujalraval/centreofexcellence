@@ -4,166 +4,291 @@ import { Menu, X, ChevronDown, Search } from "lucide-react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  /* ---------- TOP BAR MENUS ---------- */
+  const topBarMenus = [
+    {
+      name: "Portals",
+      submenu: [
+        "Student Portal",
+        "LMS",
+        "Admission Portal",
+        "Alumni Portal",
+        "Research Repository",
+        "Feedback Portal",
+        "ERP Dashboard",
+        "e-Notice Board",
+      ],
+    },
+    {
+      name: "Info",
+      submenu: [
+        "Maps & Directions",
+        "Directory",
+        "Contact Us",
+        "Downloadable Forms",
+        "Holidays",
+        "Jobs",
+        "Tenders",
+        "RTI",
+        "Roster Policy",
+        "Accessibility & Privacy",
+        "Website Updates",
+        "Feedback Form",
+      ],
+    },
+    {
+      name: "News",
+      submenu: [
+        "News & Announcements",
+        "Events Calendar",
+        "Event Reports",
+        "College Magazines",
+        "Newsletters",
+        "Gallery",
+        "Press Releases",
+        "Media Coverage",
+      ],
+    },
+    {
+      name: "Quality",
+      submenu: [
+        "IQAC",
+        "NAAC",
+        "NIRF",
+        "GSIRF",
+        "ISO Certification",
+        "Audit Reports",
+        "Quality Policies",
+        "Feedback Reports",
+        "KPI Dashboard",
+      ],
+    },
+    {
+      name: "Facilities",
+      submenu: [
+        "Campus Overview",
+        "Library",
+        "Computer Centre",
+        "Language Laboratory",
+        "Science Laboratories",
+        "Auditorium",
+        "Sports & Gymnasium",
+        "Girls Hostel",
+        "Canteen",
+        "Health Centre",
+        "Green Campus",
+        "Wi-Fi",
+        "Innovation Cell",
+        "R&D Cell",
+        "Accessibility Resources",
+      ],
+    },
+    {
+      name: "Research",
+      submenu: [
+        "Research Policy",
+        "Publications & Journals",
+        "Patents & Projects",
+        "Collaborations & MoUs",
+        "Global Outreach",
+        "Social Entrepreneurship",
+        "Community Outreach & Extension",
+      ],
+    },
+
+    /* ---------- MOBILE APP ---------- */
+    {
+      name: "Mobile App",
+      submenu: ["Download Android App", "Download iOS App"],
+    },
+
+    /* ---------- LOGIN ---------- */
+    {
+      name: "Login",
+      submenu: ["Student Login", "Faculty Login", "Admin / Dashboard Login"],
+    },
+  ];
+
+  /* ---------- MAIN HEADER MENUS (UNCHANGED) ---------- */
   const mainMenus = [
     { name: "Home", link: "/" },
     {
-      name: "The College",
+      name: "About",
+      column: true,
       submenu: [
-        "About the College",
-        "Mission & Vision",
-        "Coordinator’s Desk",
+        "About COE",
+        "School of Law",
+        "Gujarat University",
+        "Mission, Vision & Core Values",
+        "Motto & Crest",
         "Administration",
-        "Policies",
+        "Governance",
+        "Co-ordinator Desk",
+        "Legacy & Heritage",
+        "Annual Reports",
+        "News Letter",
+        "Institutional Distinctiveness",
+        "Policies & Procedures",
       ],
     },
     {
       name: "Academics",
-      submenu: ["Programs", "Departments", "Faculty", "Academic Calendar"],
-    },
-    {
-      name: "Student Life",
       submenu: [
-        "Clubs & Societies",
-        "Scholarships",
-        "Student Support",
-        "Committees",
+        "Courses Offered",
+        "Academic Calendar",
+        "Curriculum Design",
+        "Teaching-Learning Innovations",
+        "Faculty Profiles",
+        "LMS",
+        "Institutional Repository",
+        "Feedback & Analysis",
       ],
     },
-    { name: "Admissions", link: "/admissions" },
-    { name: "Contact", link: "/contact" },
+    {
+      name: "Students",
+      submenu: [
+        "Clubs",
+        "Co-Curricular Activities",
+        "Committees",
+        "Activities",
+        "Awards",
+        "Student Support Services",
+        "College Handbook",
+        "Parents’ Corner",
+        "Student Feedback",
+        "Surveys & Polls",
+      ],
+    },
+    {
+      name: "Outreach",
+      submenu: [
+        "NSS",
+        "NCC",
+        "UBA",
+        "Community Outreach",
+        "Social Entrepreneurship",
+        "Capacity Building Workshops",
+        "Gender Equity",
+        "Environment Awareness",
+        "SDG Mapping",
+      ],
+    },
+    {
+      name: "Admissions",
+      submenu: [
+        "Admission Overview",
+        "Bulletin of Information",
+        "Distribution of Seats",
+        "Application Procedure",
+        "Admission Process",
+        "Fee Structure",
+        "Cut-off Lists",
+        "Admission Data",
+        "Prospectus",
+        "Orientation Programme",
+        "Online Admission Portal",
+      ],
+    },
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* ================= MAIN BAR ================= */}
-        <div className="flex items-center justify-between h-24">
-          {/* Logo + Title */}
-          <div className="flex items-center gap-3">
-            <img
-              src="/logo.svg"
-              alt="Centre of Excellence Logo"
-              className="h-11 w-auto"
-            />
-            <div>
-              <h1 className="text-base font-semibold tracking-wide text-[#0a0e72]">
-                Centre of Excellence
-              </h1>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                University School of Law, Gujarat University
-              </p>
-            </div>
-          </div>
+    <>
+      {/* ================= TOP BAR ================= */}
+      <div className="hidden lg:block bg-gray-100 border-b text-sm relative z-[60]">
+        <div className="max-w-[1600px] mx-auto px-6 h-10 flex items-center justify-end gap-6">
+          {topBarMenus.map((menu, i) => (
+            <div key={i} className="relative group">
+              <span className="flex items-center gap-1 text-gray-700 hover:text-[#0a0e72] cursor-pointer font-medium">
+                {menu.name}
+                <ChevronDown className="w-3 h-3" />
+              </span>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-10">
-            {mainMenus.map((item, index) => (
-              <div key={index} className="relative group">
-                {item.submenu ? (
-                  <button className="flex items-center gap-1 text-[15px] font-normal text-gray-800 hover:text-[#0a0e72] transition">
-                    {item.name}
-                    <ChevronDown className="w-4 h-4" />
-                  </button>
-                ) : (
-                  <a
-                    href={item.link}
-                    className="text-[15px] font-normal text-gray-800 hover:text-[#0a0e72] transition"
-                  >
-                    {item.name}
-                  </a>
-                )}
-
-                {/* Dropdown */}
-                {item.submenu && (
-                  <div className="absolute left-0 top-full mt-3 w-60 bg-white border border-gray-200 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-                    {item.submenu.map((sub, idx) => (
-                      <a
-                        key={idx}
-                        href="#"
-                        className="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0a0e72]"
-                      >
-                        {sub}
-                      </a>
-                    ))}
-                  </div>
-                )}
+              <div className="absolute right-0 top-full pt-2 hidden group-hover:block z-[70]">
+                <div className="bg-white border rounded-lg shadow-xl w-64 max-h-[70vh] overflow-y-auto">
+                  {menu.submenu.map((sub, idx) => (
+                    <a
+                      key={idx}
+                      href="#"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#0a0e72] hover:text-white"
+                    >
+                      {sub}
+                    </a>
+                  ))}
+                </div>
               </div>
-            ))}
-          </nav>
-
-          {/* Right Actions */}
-          <div className="flex items-center gap-4">
-            <button className="hidden lg:flex p-2 text-gray-700 hover:text-[#0a0e72] transition">
-              <Search className="w-5 h-5" />
-            </button>
-
-            <a
-              href="/apply"
-              className="hidden lg:inline-flex px-4 py-2 rounded-md bg-[#0a0e72] text-white text-sm font-medium hover:bg-[#0a0e72]/90 transition"
-            >
-              Apply Now
-            </a>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="xl:hidden p-2"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
-          </div>
+            </div>
+          ))}
         </div>
+      </div>
 
-        {/* ================= MOBILE MENU ================= */}
-        {isMenuOpen && (
-          <div className="xl:hidden border-t border-gray-200 py-4">
-            <div className="space-y-3">
+      {/* ================= MAIN HEADER ================= */}
+      <header className="sticky top-0 z-50 bg-white border-b">
+        <div className="max-w-[1600px] mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
+            <div className="flex items-center gap-3">
+              <img src="/logo.svg" alt="COE" className="h-12" />
+              <div className="hidden md:block">
+                <h1 className="text-sm font-semibold text-[#0a0e72]">
+                  Centre of Excellence
+                </h1>
+                <p className="text-xs text-gray-600">
+                  School of Law, Gujarat University
+                </p>
+              </div>
+            </div>
+
+            <nav className="hidden xl:flex items-center gap-10">
               {mainMenus.map((item, index) => (
-                <div key={index}>
-                  {item.submenu ? (
-                    <details>
-                      <summary className="flex justify-between items-center cursor-pointer font-medium text-gray-800">
-                        {item.name}
-                        <ChevronDown className="w-4 h-4" />
-                      </summary>
-                      <div className="mt-2 ml-4 space-y-2">
+                <div key={index} className="relative group">
+                  <span className="flex items-center gap-1 font-semibold text-gray-800 hover:text-[#0a0e72] cursor-pointer">
+                    {item.name}
+                    {item.submenu && <ChevronDown className="w-4 h-4" />}
+                  </span>
+
+                  {item.submenu && (
+                    <div className="absolute left-0 top-full pt-2 hidden group-hover:block z-[60]">
+                      <div
+                        className={`bg-gray-50 border rounded-lg shadow-xl p-3 ${
+                          item.column
+                            ? "grid grid-cols-2 gap-x-6 w-[480px]"
+                            : "w-60"
+                        }`}
+                      >
                         {item.submenu.map((sub, idx) => (
                           <a
                             key={idx}
                             href="#"
-                            className="block text-sm text-gray-600 hover:text-[#0a0e72]"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#0a0e72] hover:text-white rounded"
                           >
                             {sub}
                           </a>
                         ))}
                       </div>
-                    </details>
-                  ) : (
-                    <a
-                      href={item.link}
-                      className="block font-medium text-gray-800"
-                    >
-                      {item.name}
-                    </a>
+                    </div>
                   )}
                 </div>
               ))}
+            </nav>
 
+            <div className="flex items-center gap-4">
+              <Search className="hidden lg:block w-5 h-5 cursor-pointer" />
               <a
                 href="/apply"
-                className="inline-block mt-4 px-4 py-2 rounded-md bg-[#0a0e72] text-white text-sm font-medium"
+                className="hidden lg:inline-flex px-4 py-2 text-sm bg-[#0a0e72] text-white rounded-md hover:bg-[#070b5a]"
               >
                 Apply Now
               </a>
+              <button
+                className="lg:hidden"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? <X /> : <Menu />}
+              </button>
             </div>
           </div>
-        )}
-      </div>
-    </header>
+        </div>
+      </header>
+    </>
   );
 };
 

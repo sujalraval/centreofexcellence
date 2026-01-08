@@ -27,15 +27,7 @@ const HeroSection = () => {
       <div className="relative min-h-[700px] flex items-center">
         <div className="container mx-auto px-4 py-20">
           <div className="max-w-3xl">
-            {/* Program Badge */}
-            <div className="inline-block mb-6">
-              <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
-                <span>•</span>
-                <span>Centre of Excellence</span>
-                <span>•</span>
-                <span>Established 2016</span>
-              </div>
-            </div>
+           
 
             {/* Main Title */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">

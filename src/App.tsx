@@ -8,9 +8,11 @@ import NewsAnnouncements from "./components/home/NewsAnnouncements";
 import CampusHighlights from "./components/home/CampusHighlights.js";
 import EventsCalendar from "./components/home/EventsCalendar.js";
 import EventsGallery from "./components/home/EventsGallery";
-import AcademicPrograms from "./components/home/AcademicPrograms";
+import ReviewsSection from "./components/home/ReviewsSection";
+// import AcademicPrograms from "./components/home/AcademicPrograms";
 import EventsGalleryPage from "./components/events/EventsGalleryPage";
 import Footer from "./components/Footer.js";
+import SupportersPartners from "./components/SupportersPartners";
 
 function App() {
   return (
@@ -25,10 +27,12 @@ function App() {
               <QuickInfoPanel />
               <AboutSnapshot />
               <CampusHighlights />
-              <AcademicPrograms />
+              {/* <AcademicPrograms /> */}
               <NewsAnnouncements />
+              <ReviewsSection />
               <EventsCalendar />
               <EventsGallery />
+              <SupportersPartners />
             </main>
           }
         />
