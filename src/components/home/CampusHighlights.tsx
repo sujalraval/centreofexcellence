@@ -12,6 +12,7 @@ import {
   FileText,
   Calendar,
   Newspaper,
+  Shield,
 } from "lucide-react";
 
 const CampusHighlights = () => {
@@ -99,6 +100,20 @@ const CampusHighlights = () => {
       count: "Scholarly Works",
       icon: <Newspaper className="w-8 h-8" />,
       image: "/campus/computer-lab.jpg",
+    },
+    {
+      title: "NSS",
+      description: "National Service Scheme for community development",
+      count: "Volunteer Program",
+      icon: <HeartHandshake className="w-8 h-8" />,
+      image: "/campus/nss.jpg",
+    },
+    {
+      title: "NCC",
+      description: "National Cadet Corps for military training",
+      count: "Leadership Program",
+      icon: <Shield className="w-8 h-8" />,
+      image: "/campus/ncc.jpg",
     },
   ];
 
