@@ -92,6 +92,7 @@ export interface FacultyMember {
   phone?: string;
   image: string;
   specialties?: string[];
+  profileUrl?: string;
 }
 
 export interface TopBarSubmenuItem {

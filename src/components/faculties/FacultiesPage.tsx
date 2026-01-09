@@ -18,6 +18,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "shivangeepatel96@gmail.com",
       image: "/faculty/shivanagee-patel.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/dr-shivanagee-patel",
     },
     {
       id: 2,
@@ -29,6 +30,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "sharma.komal0096@gmail.com",
       image: "/faculty/komal-sharma.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/dr-komal-sharma",
     },
     {
       id: 3,
@@ -40,6 +42,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "cmamta032@gmail.com",
       image: "/faculty/mamta-chaudhary.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/dr-mamta-chaudhary",
     },
     {
       id: 4,
@@ -51,6 +54,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "rathorjayesh05@gmail.com",
       image: "/faculty/jayesh-rathor.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/mr-jayesh-rathor",
     },
     {
       id: 5,
@@ -62,6 +66,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "aartiniharbhatt@gmail.com",
       image: "/faculty/aarti-vyas-bhatt.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/dr-aarti-vyas bhatt",
     },
     {
       id: 6,
@@ -73,6 +78,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "swatishah1009@gmail.com",
       image: "/faculty/swati-shah.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/dr-swati-shah",
     },
     {
       id: 7,
@@ -84,6 +90,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "tejasrawat89@gmail.com",
       image: "/faculty/tejas-rawat.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/",
     },
     {
       id: 8,
@@ -95,6 +102,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "dr.bharad@gujaratuniversity.ac.in",
       image: "/faculty/bhavesh-bharad.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/dr-bhavesh-bharad",
     },
     {
       id: 9,
@@ -106,6 +114,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "gusaik7@gmail.com",
       image: "/faculty/khushbu-gusai.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/miss-khushbu-gusai",
     },
     {
       id: 10,
@@ -117,6 +126,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "mistyrvarsha@gmail.com",
       image: "/faculty/varsha-mistry.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/dr-varsha-mistry",
     },
     {
       id: 11,
@@ -128,6 +138,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "hardithakkar.1910@gmail.com",
       image: "/faculty/hardi-thakkar.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/dr-hardi-thakkar",
     },
     {
       id: 12,
@@ -139,6 +150,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "kavyani.kumawat@gmail.com",
       image: "/faculty/kavyani-kumawat.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/dr-kavyani-kumawat",
     },
     {
       id: 13,
@@ -150,6 +162,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "ashwinayadav2021@gmail.com",
       image: "/faculty/ashwina-yadav.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/miss-ashwina-yadav",
     },
     {
       id: 14,
@@ -161,6 +174,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "sannidhibuch@gmail.com",
       image: "/faculty/sannidhi-buch.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/miss-sannidhi-buch",
     },
     {
       id: 15,
@@ -172,6 +186,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "rutateraiya4712@gmail.com",
       image: "/faculty/ruta-bharad.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/ms-ruta-bharad",
     },
     {
       id: 16,
@@ -183,6 +198,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "chaudhryamita09@gmail.com",
       image: "/faculty/amita-chaudhry.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/",
     },
     {
       id: 17,
@@ -194,6 +210,7 @@ const FacultiesPage = () => {
       experience: "",
       email: "stutik1698@gmail.com",
       image: "/faculty/stuti-khare-patel.jpg",
+      profileUrl: "https://coesolgu.edu.in/staff/miss-stuti-khare&patel",
     },
   ];
 
@@ -385,6 +402,18 @@ const FacultiesPage = () => {
                           </a>
                         )}
                       </div>
+                      {member.profileUrl && (
+                        <div className="mt-4">
+                          <a
+                            href={member.profileUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-4 py-2 bg-[#0a0e72] text-white text-sm font-medium rounded-lg hover:bg-blue-800 transition"
+                          >
+                            View Profile
+                          </a>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
