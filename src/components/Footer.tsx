@@ -23,11 +23,11 @@ const Footer = () => {
   ];
 
   const policies = [
-    { name: "Privacy Policy", url: "/privacy" },
-    { name: "Refund Policy", url: "/accessibility" },
-    { name: "Terms & Conditions", url: "/terms" },
-    { name: "Disclaimer", url: "/rti" },
-    { name: "Grievance Redressal", url: "/grievance" },
+    { name: "Privacy Policy", url: "/privacy-policy" },
+    { name: "Refund Policy", url: "/refund-policy" },
+    { name: "Terms & Conditions", url: "/terms-conditions" },
+    { name: "Disclaimer", url: "/disclaimer" },
+    { name: "Grievance Redressal", url: "/grievance-redressal" },
   ];
 
   const portals = [
@@ -40,10 +40,26 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, url: "#", label: "Facebook" },
-    { icon: <Twitter className="w-5 h-5" />, url: "#", label: "Twitter" },
-    { icon: <Linkedin className="w-5 h-5" />, url: "#", label: "LinkedIn" },
-    { icon: <Instagram className="w-5 h-5" />, url: "#", label: "Instagram" },
+    {
+      icon: <Facebook className="w-5 h-5" />,
+      url: "https://www.facebook.com/profile.php?id=100095089732832",
+      label: "Facebook",
+    },
+    {
+      icon: <Twitter className="w-5 h-5" />,
+      url: "https://x.com/COESOLGU",
+      label: "Twitter",
+    },
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      url: "https://www.linkedin.com/in/centre-of-excellence-school-of-law-gujarat-university-385a3a26a/",
+      label: "LinkedIn",
+    },
+    {
+      icon: <Instagram className="w-5 h-5" />,
+      url: "https://www.instagram.com/centreofexcellence2016/?hl=en",
+      label: "Instagram",
+    },
     { icon: <Youtube className="w-5 h-5" />, url: "#", label: "YouTube" },
   ];
 

@@ -61,10 +61,12 @@ export interface MainMenuItem {
   name: string;
   link?: string;
   column?: boolean;
-  submenu?: string[] | {
-    col1: string[];
-    col2: string[];
-  };
+  submenu?:
+    | string[]
+    | {
+        col1: string[];
+        col2: string[];
+      };
 }
 
 export interface BadgeItem {
@@ -76,6 +78,20 @@ export interface BadgeItem {
 export interface StatItem {
   value: string;
   label: string;
+}
+
+export interface FacultyMember {
+  id: number;
+  salutation: string;
+  name: string;
+  designation: string;
+  department: string;
+  education?: string;
+  experience?: string;
+  email: string;
+  phone?: string;
+  image: string;
+  specialties?: string[];
 }
 
 export interface TopBarSubmenuItem {
@@ -92,10 +108,12 @@ export interface MainMenuItem {
   name: string;
   link?: string;
   column?: boolean;
-  submenu?: string[] | {
-    col1: string[];
-    col2: string[];
-  };
+  submenu?:
+    | string[]
+    | {
+        col1: string[];
+        col2: string[];
+      };
 }
 
 export interface BadgeItem {

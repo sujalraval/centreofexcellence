@@ -11,6 +11,12 @@ import EventsGallery from "./components/home/EventsGallery";
 import ReviewsSection from "./components/home/ReviewsSection";
 // import AcademicPrograms from "./components/home/AcademicPrograms";
 import EventsGalleryPage from "./components/events/EventsGalleryPage";
+import FacultiesPage from "./components/faculties/FacultiesPage";
+import PrivacyPolicy from "./components/policies/PrivacyPolicy";
+import RefundPolicy from "./components/policies/RefundPolicy";
+import TermsConditions from "./components/policies/TermsConditions";
+import Disclaimer from "./components/policies/Disclaimer";
+import GrievanceRedressal from "./components/policies/GrievanceRedressal";
 import Footer from "./components/Footer.js";
 import SupportersPartners from "./components/SupportersPartners";
 
@@ -37,6 +43,12 @@ function App() {
           }
         />
         <Route path="/events" element={<EventsGalleryPage />} />
+        <Route path="/faculties" element={<FacultiesPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
+        <Route path="/grievance-redressal" element={<GrievanceRedressal />} />
       </Routes>
       <Footer />
     </div>

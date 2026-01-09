@@ -27,7 +27,7 @@ const badges: BadgeItem[] = [
 const QuickInfoPanel = () => {
   return (
     // ⬇️ Reduced overlap for breathing space
-    <section className="relative -mt-24 z-20">
+    <section className="relative -mt-24 z-20 sm:-mt-10">
       <div className="container mx-auto px-4">
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden pt-2">
           {/* Divider */}
@@ -53,7 +53,9 @@ const QuickInfoPanel = () => {
                   <h3 className="text-lg font-semibold text-gu-dark">
                     {badge.title}
                   </h3>
-                  {badge.description && <p className="text-sm text-gray-600">{badge.description}</p>}
+                  {badge.description && (
+                    <p className="text-sm text-gray-600">{badge.description}</p>
+                  )}
                 </div>
               ))}
             </div>
