@@ -12,6 +12,11 @@ import ReviewsSection from "./components/home/ReviewsSection";
 // import AcademicPrograms from "./components/home/AcademicPrograms";
 import EventsGalleryPage from "./components/events/EventsGalleryPage";
 import FacultiesPage from "./components/faculties/FacultiesPage";
+import SchoolOfLawPage from "./components/SchoolOfLawPage";
+import AboutCOEPage from "./components/AboutCOEPage";
+import GujaratUniversityPage from "./components/GujaratUniversityPage";
+import AdministrationPage from "./components/AdministrationPage";
+import CoordinatorDeskPage from "./components/CoordinatorDeskPage";
 import PrivacyPolicy from "./components/policies/PrivacyPolicy";
 import RefundPolicy from "./components/policies/RefundPolicy";
 import TermsConditions from "./components/policies/TermsConditions";
@@ -19,6 +24,12 @@ import Disclaimer from "./components/policies/Disclaimer";
 import GrievanceRedressal from "./components/policies/GrievanceRedressal";
 import Footer from "./components/Footer.js";
 import SupportersPartners from "./components/SupportersPartners";
+import Clubs from "./components/students/Clubs";
+import CommitteeList from "./components/students/CommitteeList";
+import CommitteeDetails from "./components/students/CommitteeDetails";
+import StudentActivities from "./components/students/StudentActivities";
+import Awards from "./components/students/Awards";
+import StudentSupportServices from "./components/students/StudentSupportServices";
 
 function App() {
   return (
@@ -44,6 +55,21 @@ function App() {
         />
         <Route path="/events" element={<EventsGalleryPage />} />
         <Route path="/faculties" element={<FacultiesPage />} />
+        <Route path="/school-of-law" element={<SchoolOfLawPage />} />
+        <Route path="/about-coe" element={<AboutCOEPage />} />
+        <Route path="/gujarat-university" element={<GujaratUniversityPage />} />
+        <Route path="/administration" element={<AdministrationPage />} />
+        <Route path="/coordinator-desk" element={<CoordinatorDeskPage />} />
+        <Route path="/students/clubs" element={<Clubs />} />
+        <Route path="/students/committees" element={<CommitteeList />} />
+        <Route path="/students/committees/:id" element={<CommitteeDetails />} />
+        <Route path="/students/activities" element={<StudentActivities />} />
+        <Route path="/students/awards" element={<Awards />} />
+        <Route
+          path="/students/support-services"
+          element={<StudentSupportServices />}
+        />
+
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />

@@ -58,30 +58,6 @@ const FacultiesPage = () => {
     },
     {
       id: 5,
-      salutation: "Dr.",
-      name: "Aarti Vyas Bhatt",
-      designation: "Assistant Professor",
-      department: "Law",
-      education: "",
-      experience: "",
-      email: "aartiniharbhatt@gmail.com",
-      image: "/faculty/aarti-vyas-bhatt.jpg",
-      profileUrl: "https://coesolgu.edu.in/staff/dr-aarti-vyas bhatt",
-    },
-    {
-      id: 6,
-      salutation: "Dr.",
-      name: "Swati Shah",
-      designation: "Assistant Professor",
-      department: "Law",
-      education: "",
-      experience: "",
-      email: "swatishah1009@gmail.com",
-      image: "/faculty/swati-shah.jpg",
-      profileUrl: "https://coesolgu.edu.in/staff/dr-swati-shah",
-    },
-    {
-      id: 7,
       salutation: "Mr.",
       name: "Tejas Rawat",
       designation: "Clerk",
@@ -93,7 +69,7 @@ const FacultiesPage = () => {
       profileUrl: "https://coesolgu.edu.in/staff/",
     },
     {
-      id: 8,
+      id: 6,
       salutation: "Dr.",
       name: "Bhavesh Bharad",
       designation: "HOD",
@@ -105,7 +81,7 @@ const FacultiesPage = () => {
       profileUrl: "https://coesolgu.edu.in/staff/dr-bhavesh-bharad",
     },
     {
-      id: 9,
+      id: 7,
       salutation: "Miss.",
       name: "Khushbu Gusai",
       designation: "Assistant Professor",
@@ -117,7 +93,7 @@ const FacultiesPage = () => {
       profileUrl: "https://coesolgu.edu.in/staff/miss-khushbu-gusai",
     },
     {
-      id: 10,
+      id: 8,
       salutation: "Dr.",
       name: "Varsha Mistry",
       designation: "Assistant Professor",
@@ -129,7 +105,7 @@ const FacultiesPage = () => {
       profileUrl: "https://coesolgu.edu.in/staff/dr-varsha-mistry",
     },
     {
-      id: 11,
+      id: 9,
       salutation: "Dr.",
       name: "Hardi Thakkar",
       designation: "Assistant Professor",
@@ -141,7 +117,7 @@ const FacultiesPage = () => {
       profileUrl: "https://coesolgu.edu.in/staff/dr-hardi-thakkar",
     },
     {
-      id: 12,
+      id: 10,
       salutation: "Dr.",
       name: "Kavyani Kumawat",
       designation: "Assistant Professor",
@@ -153,7 +129,7 @@ const FacultiesPage = () => {
       profileUrl: "https://coesolgu.edu.in/staff/dr-kavyani-kumawat",
     },
     {
-      id: 13,
+      id: 11,
       salutation: "Miss.",
       name: "Ashwina Yadav",
       designation: "Assistant Professor",
@@ -165,7 +141,7 @@ const FacultiesPage = () => {
       profileUrl: "https://coesolgu.edu.in/staff/miss-ashwina-yadav",
     },
     {
-      id: 14,
+      id: 12,
       salutation: "Miss.",
       name: "Sannidhi Buch",
       designation: "Co-Cordinator",
@@ -177,7 +153,7 @@ const FacultiesPage = () => {
       profileUrl: "https://coesolgu.edu.in/staff/miss-sannidhi-buch",
     },
     {
-      id: 15,
+      id: 13,
       salutation: "Ms.",
       name: "Ruta Bharad",
       designation: "Visiting Faculty",
@@ -189,7 +165,7 @@ const FacultiesPage = () => {
       profileUrl: "https://coesolgu.edu.in/staff/ms-ruta-bharad",
     },
     {
-      id: 16,
+      id: 14,
       salutation: "Miss.",
       name: "Amita Chaudhry",
       designation: "Assistant Professor (Law)",
@@ -201,7 +177,7 @@ const FacultiesPage = () => {
       profileUrl: "https://coesolgu.edu.in/staff/",
     },
     {
-      id: 17,
+      id: 15,
       salutation: "Miss.",
       name: "Stuti Khare Patel",
       designation: "Assistant Professor (Law)",

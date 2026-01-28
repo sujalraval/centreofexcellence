@@ -104,6 +104,15 @@ const EventsGalleryPage = () => {
           </Link>
         ))}
       </div>
+
+      <div className="text-center mt-10">
+        <Link
+          to="/events"
+          className="inline-flex items-center px-6 py-3 bg-[#0a0e72] text-white rounded-lg hover:bg-[#080b5a] transition-colors font-medium"
+        >
+          View All Events
+        </Link>
+      </div>
     </section>
   );
 };
