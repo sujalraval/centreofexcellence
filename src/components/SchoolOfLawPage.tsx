@@ -5,7 +5,6 @@ import {
   Building,
   GraduationCap,
   Globe,
-  Shield,
   Lightbulb,
   Mail,
   Users,

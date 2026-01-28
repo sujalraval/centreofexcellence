@@ -30,6 +30,7 @@ import CommitteeDetails from "./components/students/CommitteeDetails";
 import StudentActivities from "./components/students/StudentActivities";
 import Awards from "./components/students/Awards";
 import StudentSupportServices from "./components/students/StudentSupportServices";
+import BComLLBPage from "./components/academics/BComLLBPage";
 
 function App() {
   return (
@@ -69,6 +70,7 @@ function App() {
           path="/students/support-services"
           element={<StudentSupportServices />}
         />
+        <Route path="/academics/bcom-llb" element={<BComLLBPage />} />
 
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />

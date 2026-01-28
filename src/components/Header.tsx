@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, ChevronDown, Search } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { TopBarMenuItem, MainMenuItem } from "../types";
 
@@ -78,7 +78,7 @@ const Header = () => {
     {
       name: "Academics",
       submenu: [
-        { label: "B.Com. LL.B. (Hons.)", link: "#" },
+        { label: "B.Com. LL.B. (Hons.)", link: "/academics/bcom-llb" },
         { label: "Academic Calendar", link: "#" },
         { label: "Faculty Profiles", link: "/faculties" },
         { label: "Curriculum Design", link: "#" },
@@ -213,14 +213,14 @@ const Header = () => {
                                     <Link
                                       key={i}
                                       to={submenuItem.link}
-                                      className="block px-3 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap text-sm"
+                                      className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap"
                                     >
                                       {submenuItem.label}
                                     </Link>
                                   );
                                 }
                                 return null;
-                              },
+                              }
                             )}
                           </div>
                         )}
@@ -266,7 +266,7 @@ const Header = () => {
                         className="flex w-full justify-between font-semibold py-2"
                         onClick={() =>
                           setActiveMobileMenu(
-                            activeMobileMenu === index ? null : index,
+                            activeMobileMenu === index ? null : index
                           )
                         }
                       >
