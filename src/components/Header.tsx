@@ -121,8 +121,8 @@ const Header = () => {
                 <ChevronDown className="w-3 h-3" />
               </span>
 
-              <div className="absolute right-0 top-full pt-2 hidden group-hover:block">
-                <div className="bg-white border rounded-lg shadow-xl w-64">
+              <div className="absolute right-0 top-full pt-3 hidden group-hover:block z-[60]">
+                <div className="bg-white border rounded-xl shadow-2xl w-64 py-2">
                   {menu.submenu.map((sub, idx) => (
                     <a
                       key={idx}
@@ -167,30 +167,60 @@ const Header = () => {
                   )}
 
                   {item.submenu && (
-                    <div className="absolute right-0 top-full pt-2 hidden group-hover:block">
-                      <div className="bg-gray-50 border rounded-lg shadow-xl p-4 w-max max-w-[90vw] overflow-x-hidden">
+                    <div className="absolute left-1/2 transform -translate-x-1/2 top-full pt-2 hidden group-hover:block">
+                      <div className="bg-white border rounded-lg shadow-xl p-4 w-max max-w-[90vw] overflow-x-hidden">
                         {Array.isArray(item.submenu) ? (
-                          item.submenu.map((sub, i) => (
-                            <Link
-                              key={i}
-                              to={sub.link}
-                              className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap"
-                            >
-                              {sub.label}
-                            </Link>
-                          ))
+                          item.submenu.map((sub, i) => {
+                            // Type guard to ensure sub is a SubmenuObjectItem
+                            if (
+                              typeof sub === "object" &&
+                              sub !== null &&
+                              "link" in sub &&
+                              "label" in sub
+                            ) {
+                              const submenuItem = sub as {
+                                label: string;
+                                link: string;
+                              };
+                              return (
+                                <Link
+                                  key={i}
+                                  to={submenuItem.link}
+                                  className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap"
+                                >
+                                  {submenuItem.label}
+                                </Link>
+                              );
+                            }
+                            return null;
+                          })
                         ) : (
                           <div className="grid grid-cols-2 gap-x-8 gap-y-2">
                             {[...item.submenu.col1, ...item.submenu.col2].map(
-                              (sub, i) => (
-                                <Link
-                                  key={i}
-                                  to={sub.link}
-                                  className="block px-3 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap text-sm"
-                                >
-                                  {sub.label}
-                                </Link>
-                              )
+                              (sub, i) => {
+                                // Type guard to ensure sub is a SubmenuObjectItem
+                                if (
+                                  typeof sub === "object" &&
+                                  sub !== null &&
+                                  "link" in sub &&
+                                  "label" in sub
+                                ) {
+                                  const submenuItem = sub as {
+                                    label: string;
+                                    link: string;
+                                  };
+                                  return (
+                                    <Link
+                                      key={i}
+                                      to={submenuItem.link}
+                                      className="block px-3 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap text-sm"
+                                    >
+                                      {submenuItem.label}
+                                    </Link>
+                                  );
+                                }
+                                return null;
+                              },
                             )}
                           </div>
                         )}
@@ -236,7 +266,7 @@ const Header = () => {
                         className="flex w-full justify-between font-semibold py-2"
                         onClick={() =>
                           setActiveMobileMenu(
-                            activeMobileMenu === index ? null : index
+                            activeMobileMenu === index ? null : index,
                           )
                         }
                       >
@@ -253,19 +283,30 @@ const Header = () => {
                           {(Array.isArray(menu.submenu)
                             ? menu.submenu
                             : [...menu.submenu.col1, ...menu.submenu.col2]
-                          ).map(
-                            (sub, i) =>
-                              typeof sub === "object" && (
+                          ).map((sub, i) => {
+                            if (
+                              typeof sub === "object" &&
+                              sub !== null &&
+                              "link" in sub &&
+                              "label" in sub
+                            ) {
+                              const submenuItem = sub as {
+                                label: string;
+                                link: string;
+                              };
+                              return (
                                 <Link
                                   key={i}
-                                  to={sub.link}
+                                  to={submenuItem.link}
                                   onClick={() => setIsMenuOpen(false)}
                                   className="block text-sm text-gray-700"
                                 >
-                                  {sub.label}
+                                  {submenuItem.label}
                                 </Link>
-                              )
-                          )}
+                              );
+                            }
+                            return null;
+                          })}
                         </div>
                       )}
                     </>

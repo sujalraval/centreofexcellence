@@ -1,8 +1,17 @@
 @import "tailwindcss";
 @layer base {
   body {
-    font-family: "Poppins", -apple-system, BlinkMacSystemFont, SF Pro Text,
-      SF Pro Display, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    font-family:
+      "Poppins",
+      -apple-system,
+      BlinkMacSystemFont,
+      SF Pro Text,
+      SF Pro Display,
+      Segoe UI,
+      Roboto,
+      Helvetica,
+      Arial,
+      sans-serif;
 
     font-size: 15.5px;
     line-height: 1.6;
@@ -43,7 +52,9 @@
 
 /* Modern shadow effects */
 .shadow-elegant {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.06);
 }
 
 .shadow-minimal {
@@ -63,4 +74,8 @@
 /* Text shadow for better readability on images */
 .text-shadow {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+html,
+body {
+  overflow-x: hidden;
 }
