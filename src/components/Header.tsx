@@ -57,10 +57,8 @@ const Header = () => {
   /* ---------- MAIN MENUS ---------- */
   const mainMenus: MainMenuItem[] = [
     { name: "Home", link: "/" },
-
     {
       name: "About",
-      column: true,
       submenu: {
         col1: [
           { label: "About COE", link: "/about-coe" },
@@ -77,7 +75,6 @@ const Header = () => {
         ],
       },
     },
-
     {
       name: "Academics",
       submenu: [
@@ -87,9 +84,7 @@ const Header = () => {
         { label: "Curriculum Design", link: "#" },
       ],
     },
-
     { name: "Faculties", link: "/faculties" },
-
     {
       name: "Students",
       submenu: [
@@ -103,7 +98,6 @@ const Header = () => {
         },
       ],
     },
-
     {
       name: "Admissions",
       submenu: [
@@ -117,34 +111,6 @@ const Header = () => {
 
   return (
     <>
-      {/* ================= TOP BAR ================= */}
-      <div className="hidden lg:block bg-gray-100 border-b text-sm z-[60]">
-        <div className="max-w-[1600px] mx-auto px-6 py-2 flex justify-end gap-6">
-          {topBarMenus.map((menu, i) => (
-            <div key={i} className="relative group">
-              <span className="flex items-center gap-1 cursor-pointer font-medium">
-                {menu.name}
-                <ChevronDown className="w-3 h-3" />
-              </span>
-
-              <div className="absolute right-0 top-full pt-2 hidden group-hover:block">
-                <div className="bg-white border rounded-lg shadow-xl w-64">
-                  {menu.submenu.map((sub, idx) => (
-                    <a
-                      key={idx}
-                      href={sub.url}
-                      className="block px-4 py-2 hover:bg-[#0a0e72] hover:text-white whitespace-nowrap"
-                    >
-                      {sub.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* ================= HEADER ================= */}
       <header className="sticky top-0 z-50 bg-white border-b">
         <div className="max-w-[1600px] mx-auto px-4 lg:px-6">
@@ -157,185 +123,85 @@ const Header = () => {
               </h1>
             </div>
 
-            {/* Desktop Nav */}
-            <nav className="hidden xl:flex gap-10">
-              {mainMenus.map((item, index) => (
-                <div key={index} className="relative group">
-                  {item.link ? (
-                    <Link to={item.link} className="font-semibold">
-                      {item.name}
-                    </Link>
-                  ) : (
-                    <span className="font-semibold cursor-pointer flex items-center gap-1">
-                      {item.name}
-                      <ChevronDown className="w-4 h-4" />
-                    </span>
-                  )}
-
-                  {item.submenu && (
-                    <div className="absolute left-0 top-full pt-2 hidden group-hover:block">
-                      <div className="bg-gray-50 border rounded-lg shadow-xl p-4 min-w-[520px]">
-                        {Array.isArray(item.submenu) ? (
-                          item.submenu.map((sub, i) =>
-                            typeof sub === "string" ? (
-                              <div
-                                key={i}
-                                className="px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap"
-                              >
-                                {sub}
-                              </div>
-                            ) : (
-                              <Link
-                                key={i}
-                                to={sub.link}
-                                className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap"
-                              >
-                                {sub.label}
-                              </Link>
-                            )
-                          )
-                        ) : (
-                          <div className="grid grid-cols-2 gap-x-8 gap-y-2">
-                            {item.submenu.col1?.map((item, i) =>
-                              typeof item === "string" ? (
-                                <div
-                                  key={`col1-${i}`}
-                                  className="px-3 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap text-sm cursor-pointer"
-                                >
-                                  {item}
-                                </div>
-                              ) : (
-                                <Link
-                                  key={`col1-${i}`}
-                                  to={item.link}
-                                  className="block px-3 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap text-sm"
-                                >
-                                  {item.label}
-                                </Link>
-                              )
-                            )}
-                            {item.submenu.col2?.map((item, i) =>
-                              typeof item === "string" ? (
-                                <div
-                                  key={`col2-${i}`}
-                                  className="px-3 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap text-sm cursor-pointer"
-                                >
-                                  {item}
-                                </div>
-                              ) : (
-                                <Link
-                                  key={`col2-${i}`}
-                                  to={item.link}
-                                  className="block px-3 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap text-sm"
-                                >
-                                  {item.label}
-                                </Link>
-                              )
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </nav>
-
             {/* Right */}
             <div className="flex items-center gap-4">
               <Search className="hidden lg:block w-5 h-5" />
-              <a
-                href="/apply"
-                className="hidden lg:inline-flex px-4 py-2 bg-[#0a0e72] text-white rounded-md"
-              >
-                Apply Now
-              </a>
               <button className="xl:hidden" onClick={() => setIsMenuOpen(true)}>
                 <Menu />
               </button>
             </div>
-            {/* ================= MOBILE MENU ================= */}
-            {isMenuOpen && (
-              <div className="fixed inset-0 z-[100] bg-black/40 xl:hidden">
-                <div className="absolute right-0 top-0 h-full w-72 bg-white shadow-xl p-4 overflow-y-auto">
-                  {/* Close Button */}
-                  <div className="flex justify-end mb-4">
-                    <button onClick={() => setIsMenuOpen(false)}>
-                      <X className="w-6 h-6" />
-                    </button>
-                  </div>
-
-                  {/* Mobile Menus */}
-                  <nav className="space-y-4">
-                    {mainMenus.map((menu, index) => (
-                      <div key={index}>
-                        {/* Menu with submenu */}
-                        {menu.submenu ? (
-                          <>
-                            <button
-                              onClick={() =>
-                                setActiveMobileMenu(
-                                  activeMobileMenu === index ? null : index
-                                )
-                              }
-                              className="flex w-full justify-between items-center font-semibold py-2"
-                            >
-                              {menu.name}
-                              <ChevronDown
-                                className={`w-4 h-4 transition ${
-                                  activeMobileMenu === index ? "rotate-180" : ""
-                                }`}
-                              />
-                            </button>
-
-                            {activeMobileMenu === index && (
-                              <div className="ml-3 mt-2 space-y-2">
-                                {Array.isArray(menu.submenu)
-                                  ? menu.submenu.map((sub, i) => (
-                                      <Link
-                                        key={i}
-                                        to={sub.link}
-                                        onClick={() => setIsMenuOpen(false)}
-                                        className="block text-sm text-gray-700"
-                                      >
-                                        {sub.label}
-                                      </Link>
-                                    ))
-                                  : [
-                                      ...(menu.submenu.col1 || []),
-                                      ...(menu.submenu.col2 || []),
-                                    ].map((sub, i) => (
-                                      <Link
-                                        key={i}
-                                        to={sub.link}
-                                        onClick={() => setIsMenuOpen(false)}
-                                        className="block text-sm text-gray-700"
-                                      >
-                                        {sub.label}
-                                      </Link>
-                                    ))}
-                              </div>
-                            )}
-                          </>
-                        ) : (
-                          /* Menu without submenu */
-                          <Link
-                            to={menu.link}
-                            onClick={() => setIsMenuOpen(false)}
-                            className="block font-semibold py-2"
-                          >
-                            {menu.name}
-                          </Link>
-                        )}
-                      </div>
-                    ))}
-                  </nav>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </header>
+
+      {/* ================= MOBILE MENU ================= */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-[100] bg-black/40 xl:hidden">
+          <div className="absolute right-0 top-0 h-full w-72 bg-white shadow-xl p-4 overflow-y-auto">
+            <div className="flex justify-end mb-4">
+              <button onClick={() => setIsMenuOpen(false)}>
+                <X />
+              </button>
+            </div>
+
+            <nav className="space-y-4">
+              {mainMenus.map((menu, index) => (
+                <div key={index}>
+                  {menu.submenu ? (
+                    <>
+                      <button
+                        className="flex w-full justify-between font-semibold py-2"
+                        onClick={() =>
+                          setActiveMobileMenu(
+                            activeMobileMenu === index ? null : index,
+                          )
+                        }
+                      >
+                        {menu.name}
+                        <ChevronDown
+                          className={`w-4 h-4 ${
+                            activeMobileMenu === index ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+
+                      {activeMobileMenu === index && (
+                        <div className="ml-3 space-y-2">
+                          {(Array.isArray(menu.submenu)
+                            ? menu.submenu
+                            : [...menu.submenu.col1, ...menu.submenu.col2]
+                          ).map((sub, i) =>
+                            typeof sub === "object" && sub.link ? (
+                              <Link
+                                key={i}
+                                to={sub.link}
+                                onClick={() => setIsMenuOpen(false)}
+                                className="block text-sm text-gray-700"
+                              >
+                                {sub.label}
+                              </Link>
+                            ) : null,
+                          )}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    menu.link && (
+                      <Link
+                        to={menu.link}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="block font-semibold py-2"
+                      >
+                        {menu.name}
+                      </Link>
+                    )
+                  )}
+                </div>
+              ))}
+            </nav>
+          </div>
+        </div>
+      )}
     </>
   );
 };
