@@ -111,6 +111,34 @@ const Header = () => {
 
   return (
     <>
+      {/* ================= TOP BAR ================= */}
+      <div className="hidden lg:block bg-gray-100 border-b text-sm">
+        <div className="max-w-[1600px] mx-auto px-6 py-2 flex justify-end gap-6">
+          {topBarMenus.map((menu, i) => (
+            <div key={i} className="relative group">
+              <span className="flex items-center gap-1 cursor-pointer font-medium">
+                {menu.name}
+                <ChevronDown className="w-3 h-3" />
+              </span>
+
+              <div className="absolute right-0 top-full pt-2 hidden group-hover:block">
+                <div className="bg-white border rounded-lg shadow-xl w-64">
+                  {menu.submenu.map((sub, idx) => (
+                    <a
+                      key={idx}
+                      href={sub.url}
+                      className="block px-4 py-2 hover:bg-[#0a0e72] hover:text-white whitespace-nowrap"
+                    >
+                      {sub.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* ================= HEADER ================= */}
       <header className="sticky top-0 z-50 bg-white border-b">
         <div className="max-w-[1600px] mx-auto px-4 lg:px-6">
@@ -123,9 +151,64 @@ const Header = () => {
               </h1>
             </div>
 
+            {/* Desktop Nav */}
+            <nav className="hidden xl:flex gap-10">
+              {mainMenus.map((item, index) => (
+                <div key={index} className="relative group">
+                  {item.link ? (
+                    <Link to={item.link} className="font-semibold">
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <span className="flex items-center gap-1 font-semibold cursor-pointer">
+                      {item.name}
+                      <ChevronDown className="w-4 h-4" />
+                    </span>
+                  )}
+
+                  {item.submenu && (
+                    <div className="absolute right-0 top-full pt-2 hidden group-hover:block">
+                      <div className="bg-gray-50 border rounded-lg shadow-xl p-4 w-max max-w-[90vw] overflow-x-hidden">
+                        {Array.isArray(item.submenu) ? (
+                          item.submenu.map((sub, i) => (
+                            <Link
+                              key={i}
+                              to={sub.link}
+                              className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap"
+                            >
+                              {sub.label}
+                            </Link>
+                          ))
+                        ) : (
+                          <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+                            {[...item.submenu.col1, ...item.submenu.col2].map(
+                              (sub, i) => (
+                                <Link
+                                  key={i}
+                                  to={sub.link}
+                                  className="block px-3 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap text-sm"
+                                >
+                                  {sub.label}
+                                </Link>
+                              )
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </nav>
+
             {/* Right */}
             <div className="flex items-center gap-4">
-              <Search className="hidden lg:block w-5 h-5" />
+              <a
+                href="/apply"
+                className="hidden lg:inline-flex px-4 py-2 bg-[#0a0e72] text-white rounded-md"
+              >
+                Apply Now
+              </a>
               <button className="xl:hidden" onClick={() => setIsMenuOpen(true)}>
                 <Menu />
               </button>
@@ -153,13 +236,13 @@ const Header = () => {
                         className="flex w-full justify-between font-semibold py-2"
                         onClick={() =>
                           setActiveMobileMenu(
-                            activeMobileMenu === index ? null : index,
+                            activeMobileMenu === index ? null : index
                           )
                         }
                       >
                         {menu.name}
                         <ChevronDown
-                          className={`w-4 h-4 ${
+                          className={`w-4 h-4 transition ${
                             activeMobileMenu === index ? "rotate-180" : ""
                           }`}
                         />
@@ -170,17 +253,18 @@ const Header = () => {
                           {(Array.isArray(menu.submenu)
                             ? menu.submenu
                             : [...menu.submenu.col1, ...menu.submenu.col2]
-                          ).map((sub, i) =>
-                            typeof sub === "object" && sub.link ? (
-                              <Link
-                                key={i}
-                                to={sub.link}
-                                onClick={() => setIsMenuOpen(false)}
-                                className="block text-sm text-gray-700"
-                              >
-                                {sub.label}
-                              </Link>
-                            ) : null,
+                          ).map(
+                            (sub, i) =>
+                              typeof sub === "object" && (
+                                <Link
+                                  key={i}
+                                  to={sub.link}
+                                  onClick={() => setIsMenuOpen(false)}
+                                  className="block text-sm text-gray-700"
+                                >
+                                  {sub.label}
+                                </Link>
+                              )
                           )}
                         </div>
                       )}
