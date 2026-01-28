@@ -120,15 +120,15 @@ const ReviewsSection = () => {
               onClick={() => setActiveTab(tab as ReviewCategory)}
               className={`px-6 py-2 rounded-full font-semibold transition ${
                 activeTab === tab
-                  ? "bg-gu-primary text-[#0a0e72e6]"
+                  ? "bg-[#0a0e72] text-white"
                   : "bg-white text-gray-700 border"
               }`}
             >
               {tab === "students"
                 ? "Students"
                 : tab === "faculty"
-                ? "Faculty"
-                : "Dignitaries"}
+                  ? "Faculty"
+                  : "Dignitaries"}
             </button>
           ))}
         </div>

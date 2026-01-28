@@ -116,7 +116,7 @@ const EventsGalleryPage = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-5 py-2 rounded-full capitalize transition-colors ${
                 selectedCategory === category
-                  ? "bg-gu-primary text-white"
+                  ? "bg-[#0a0e72] text-white"
                   : "bg-white text-gu-dark border border-gray-300 hover:bg-gray-100"
               }`}
             >
