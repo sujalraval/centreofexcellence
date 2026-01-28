@@ -254,6 +254,85 @@ const Header = () => {
                 <Menu />
               </button>
             </div>
+            {/* ================= MOBILE MENU ================= */}
+            {isMenuOpen && (
+              <div className="fixed inset-0 z-[100] bg-black/40 xl:hidden">
+                <div className="absolute right-0 top-0 h-full w-72 bg-white shadow-xl p-4 overflow-y-auto">
+                  {/* Close Button */}
+                  <div className="flex justify-end mb-4">
+                    <button onClick={() => setIsMenuOpen(false)}>
+                      <X className="w-6 h-6" />
+                    </button>
+                  </div>
+
+                  {/* Mobile Menus */}
+                  <nav className="space-y-4">
+                    {mainMenus.map((menu, index) => (
+                      <div key={index}>
+                        {/* Menu with submenu */}
+                        {menu.submenu ? (
+                          <>
+                            <button
+                              onClick={() =>
+                                setActiveMobileMenu(
+                                  activeMobileMenu === index ? null : index
+                                )
+                              }
+                              className="flex w-full justify-between items-center font-semibold py-2"
+                            >
+                              {menu.name}
+                              <ChevronDown
+                                className={`w-4 h-4 transition ${
+                                  activeMobileMenu === index ? "rotate-180" : ""
+                                }`}
+                              />
+                            </button>
+
+                            {activeMobileMenu === index && (
+                              <div className="ml-3 mt-2 space-y-2">
+                                {Array.isArray(menu.submenu)
+                                  ? menu.submenu.map((sub, i) => (
+                                      <Link
+                                        key={i}
+                                        to={sub.link}
+                                        onClick={() => setIsMenuOpen(false)}
+                                        className="block text-sm text-gray-700"
+                                      >
+                                        {sub.label}
+                                      </Link>
+                                    ))
+                                  : [
+                                      ...(menu.submenu.col1 || []),
+                                      ...(menu.submenu.col2 || []),
+                                    ].map((sub, i) => (
+                                      <Link
+                                        key={i}
+                                        to={sub.link}
+                                        onClick={() => setIsMenuOpen(false)}
+                                        className="block text-sm text-gray-700"
+                                      >
+                                        {sub.label}
+                                      </Link>
+                                    ))}
+                              </div>
+                            )}
+                          </>
+                        ) : (
+                          /* Menu without submenu */
+                          <Link
+                            to={menu.link}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block font-semibold py-2"
+                          >
+                            {menu.name}
+                          </Link>
+                        )}
+                      </div>
+                    ))}
+                  </nav>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </header>

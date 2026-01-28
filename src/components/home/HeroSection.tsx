@@ -24,11 +24,9 @@ const HeroSection = () => {
       />
 
       {/* Content */}
-      <div className="relative min-h-[700px] flex items-center">
+<div className="relative min-h-[700px] flex items-center pb-24 sm:pb-0">
         <div className="container mx-auto px-4 py-20">
           <div className="max-w-3xl">
-           
-
             {/* Main Title */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
               B.Com. LL.B. (Hons.)
@@ -55,6 +53,7 @@ const HeroSection = () => {
               </div>
             </div>
 
+            {/* CTA Section */}
             {/* CTA Section */}
             <div className="flex flex-wrap gap-4 items-center">
               <a

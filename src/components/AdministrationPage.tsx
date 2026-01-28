@@ -155,12 +155,26 @@ const AdministrationPage = () => {
                 rel="noopener noreferrer"
                 className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition text-center border border-gray-100 hover:border-[#0a0e72]"
               >
-                <div className="w-12 h-12 bg-[#0a0e72]/10 rounded-lg flex items-center justify-center text-[#0a0e72] mx-auto mb-4">
-                  <Users className="w-6 h-6" />
+                <div className="relative w-24 h-24 mx-auto mb-4">
+                  <img
+                    src={leader.image}
+                    alt={leader.name}
+                    className="w-full h-full object-cover rounded-full border-2 border-gray-200"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.parentElement!.innerHTML = `<div class="w-full h-full bg-[#0a0e72]/10 rounded-full flex items-center justify-center text-[#0a0e72]">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                      </div>`;
+                    }}
+                  />
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">{leader.title}</h3>
+                <h3 className="font-bold text-gray-900 mb-1">{leader.name}</h3>
+                <p className="text-gray-600 text-sm mb-2">{leader.title}</p>
                 <p className="text-[#0a0e72] text-sm font-medium">
-                  Visit Official Page
+                  View Profile
                 </p>
               </a>
             ))}
@@ -231,7 +245,7 @@ const AdministrationPage = () => {
                           className="flex items-center gap-3 text-gray-600 hover:text-[#0a0e72] transition"
                         >
                           <Globe className="w-5 h-5" />
-                          Official Profile
+                          View Profile
                         </a>
                       )}
                     </div>
