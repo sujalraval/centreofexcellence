@@ -107,6 +107,9 @@ const ReviewsSection = () => {
           <h2 className="text-3xl font-bold text-gu-dark">
             Voices of Our Institution
           </h2>
+          <a href="/testimonials" className="text-sm text-gu-primary font-semibold hover:underline mt-2 inline-block">
+            View All Testimonials
+          </a>
           <p className="text-gray-600 mt-2">
             Experiences shared by students, faculty, and distinguished guests
           </p>

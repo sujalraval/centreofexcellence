@@ -31,6 +31,11 @@ import StudentActivities from "./components/students/StudentActivities";
 import Awards from "./components/students/Awards";
 import StudentSupportServices from "./components/students/StudentSupportServices";
 import BComLLBPage from "./components/academics/BComLLBPage";
+import AnnouncementsPage from "./components/AnnouncementsPage";
+import EventsActivityPage from "./components/EventsActivityPage";
+import StudentActivityPage from "./components/StudentActivityPage";
+import TestimonialsPage from "./components/TestimonialsPage";
+import MouListingPage from "./components/MouListingPage";
 
 function App() {
   return (
@@ -71,6 +76,11 @@ function App() {
           element={<StudentSupportServices />}
         />
         <Route path="/academics/bcom-llb" element={<BComLLBPage />} />
+        <Route path="/announcements" element={<AnnouncementsPage />} />
+        <Route path="/events-activities" element={<EventsActivityPage />} />
+        <Route path="/student-activities" element={<StudentActivityPage />} />
+        <Route path="/testimonials" element={<TestimonialsPage />} />
+        <Route path="/mou-agreements" element={<MouListingPage />} />
 
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />

@@ -8,6 +8,12 @@ const announcements = [
     id: 1,
     title: "Admission 2025-26 Open",
     date: "15 Mar 2025",
+    place: "Gujarat University",
+    pageLink: "/announcements/1",
+    url: "https://example.com/announcement/1",
+    thumbnailImage: "https://images.unsplash.com/photo-1589391886085-8b6b0ac72a1a?auto=format&fit=crop&w=400",
+    pdfFile: "/documents/admission-2025.pdf",
+    textView: "Admission for academic year 2025-26 is now open for various programs.",
     category: "Admission",
     type: "announcement",
   },
@@ -15,20 +21,38 @@ const announcements = [
     id: 2,
     title: "National Moot Court Competition 2025",
     date: "10 Mar 2025",
+    place: "Ahmedabad Law Center",
+    pageLink: "/announcements/2",
+    url: "https://example.com/announcement/2",
+    thumbnailImage: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=400",
+    pdfFile: "/documents/moot-court-competition.pdf",
+    textView: "Annual national moot court competition scheduled for March 2025.",
     category: "Event",
-    type: "event",
+    type: "announcement",
   },
   {
     id: 3,
     title: "NAAC Peer Team Visit Schedule",
     date: "05 Mar 2025",
+    place: "University Campus",
+    pageLink: "/announcements/3",
+    url: "https://example.com/announcement/3",
+    thumbnailImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400",
+    pdfFile: "/documents/naac-visit-schedule.pdf",
+    textView: "Schedule for the upcoming NAAC peer team visit to university.",
     category: "Important",
-    type: "circular",
+    type: "announcement",
   },
   {
     id: 4,
     title: "Placement Drive by IIFL Home Loan",
     date: "23 Jan 2025",
+    place: "COE Campus",
+    pageLink: "/announcements/4",
+    url: "https://example.com/announcement/4",
+    thumbnailImage: "https://images.unsplash.com/photo-1589391886085-8b6b0ac72a1a?auto=format&fit=crop&w=400",
+    pdfFile: "/documents/placement-drive-iifl.pdf",
+    textView: "Placement drive organized by IIFL Home Loan for law students.",
     category: "Placement",
     type: "announcement",
   },
@@ -36,8 +60,14 @@ const announcements = [
     id: 5,
     title: "Legal Aid Clinic Winter Schedule",
     date: "20 Dec 2024",
+    place: "Law School Building",
+    pageLink: "/announcements/5",
+    url: "https://example.com/announcement/5",
+    thumbnailImage: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=400",
+    pdfFile: "/documents/legal-aid-clinic.pdf",
+    textView: "Winter schedule for legal aid clinic services.",
     category: "Notice",
-    type: "notice",
+    type: "announcement",
   },
 ];
 
@@ -92,7 +122,7 @@ const NewsAnnouncements = () => {
                 {announcements.map((item) => (
                   <a
                     key={item.id}
-                    href="#"
+                    href={item.pageLink || '#'}
                     className="block p-4 rounded-lg border border-gray-200 hover:border-gu-primary hover:bg-gu-light transition"
                   >
                     <div className="flex justify-between items-start mb-2">
@@ -105,6 +135,7 @@ const NewsAnnouncements = () => {
                       </span>
                     </div>
                     <h4 className="font-semibold text-gu-dark">{item.title}</h4>
+                    <p className="text-xs text-gray-600 mt-1">{item.place}</p>
                   </a>
                 ))}
               </div>
@@ -124,7 +155,7 @@ const NewsAnnouncements = () => {
           {/* News + Reviews */}
           <div className="lg:col-span-2">
             <h2 className="text-3xl font-bold text-gu-dark mb-6">
-              Latest News & Updates
+              Announcements
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">

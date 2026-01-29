@@ -12,23 +12,17 @@ import {
 
 const Footer = () => {
   const quickLinks = [
-    { name: "Admissions", url: "/admissions" },
-    { name: "Academics", url: "/academics" },
-    { name: "Research", url: "/research" },
-    { name: "Placements", url: "/placements" },
-    { name: "IQAC", url: "/iqac" },
-    { name: "Library", url: "/library" },
-    { name: "Hostel", url: "/hostel" },
-    { name: "Alumni", url: "/alumni" },
+    {
+      name: "Academics",
+      url: "https://www.coesolgu.edu.in/academics/bcom-llb",
+    },
+    { name: "Placements", url: "#" },
+    { name: "IQAC", url: "https://iqac.gujaratuniversity.ac.in/" },
+    { name: "Library", url: "https://gulibrary.com/" },
+    { name: "Alumni", url: "https://alumni.gujaratuniversity.ac.in/" },
   ];
 
-  const policies = [
-    { name: "Privacy Policy", url: "/privacy-policy" },
-    { name: "Refund Policy", url: "/refund-policy" },
-    { name: "Terms & Conditions", url: "/terms-conditions" },
-    { name: "Disclaimer", url: "/disclaimer" },
-    { name: "Grievance Redressal", url: "/grievance-redressal" },
-  ];
+  // Policies removed as per request
 
   const portals = [
     { name: "Student Portal (SIS)", url: "https://lms.coesolgu.edu.in/" },
@@ -46,11 +40,6 @@ const Footer = () => {
       label: "Facebook",
     },
     {
-      icon: <Twitter className="w-5 h-5" />,
-      url: "https://x.com/COESOLGU",
-      label: "Twitter",
-    },
-    {
       icon: <Linkedin className="w-5 h-5" />,
       url: "https://www.linkedin.com/in/centre-of-excellence-school-of-law-gujarat-university-385a3a26a/",
       label: "LinkedIn",
@@ -60,7 +49,16 @@ const Footer = () => {
       url: "https://www.instagram.com/centreofexcellence2016/?hl=en",
       label: "Instagram",
     },
-    { icon: <Youtube className="w-5 h-5" />, url: "#", label: "YouTube" },
+    {
+      icon: <Youtube className="w-5 h-5" />,
+      url: "#",
+      label: "YouTube",
+    },
+    {
+      icon: <Twitter className="w-5 h-5" />,
+      url: "https://x.com/COESOLGU",
+      label: "Twitter",
+    },
   ];
 
   return (
@@ -126,45 +124,22 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Policies & Portals */}
+          {/* Web Portals */}
           <div>
-            <h4 className="text-lg font-bold mb-6">Policies & Portals</h4>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <h5 className="font-semibold mb-3 text-[#0a0e72e6]">
-                  Policies
-                </h5>
-                <ul className="space-y-2">
-                  {policies.map((policy, index) => (
-                    <li key={index}>
-                      <a
-                        href={policy.url}
-                        className="text-[#0a0e72e6] hover:text-[#0a0e72e6] hover:underline text-sm"
-                      >
-                        {policy.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h5 className="font-semibold mb-3 text-[#0a0e72e6]">
-                  Web Portals
-                </h5>
-                <ul className="space-y-2">
-                  {portals.map((portal, index) => (
-                    <li key={index}>
-                      <a
-                        href={portal.url}
-                        className="text-[#0a0e72e6] hover:text-[#0a0e72e6] hover:underline text-sm"
-                      >
-                        {portal.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <h4 className="text-lg font-bold mb-6">Web Portals</h4>
+            <ul className="space-y-3">
+              {portals.map((portal, index) => (
+                <li key={index}>
+                  <a
+                    href={portal.url}
+                    className="text-[#0a0e72e6] hover:underline transition flex items-center"
+                  >
+                    <span className="w-2 h-2 bg-gu-[#0a0e72e6] rounded-full mr-3"></span>
+                    {portal.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contact Info */}
