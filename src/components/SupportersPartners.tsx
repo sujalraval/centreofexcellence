@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { ChevronRight, FileText } from "lucide-react";
+
 
 interface PartnerLogo {
   id: number;
@@ -56,29 +55,7 @@ const SupportersPartners: React.FC = () => {
           ))}
         </div>
 
-        {/* MOU Navigation Section */}
-        <div className="mt-12 text-center">
-          <div className="bg-gray-50 rounded-xl p-8 max-w-2xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <FileText className="w-6 h-6 text-[#0a0e72]" />
-              <h3 className="text-xl font-bold text-[#0a0e72]">
-                Memorandum of Understanding
-              </h3>
-            </div>
-            <p className="text-gray-600 mb-6">
-              Explore our strategic partnerships and collaborative agreements
-              that enhance educational excellence and provide valuable
-              opportunities for our students and faculty.
-            </p>
-            <Link
-              to="/mou-agreements"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#0a0e72] text-white rounded-lg hover:bg-[#080b5a] transition-colors font-medium"
-            >
-              View All MOU Agreements
-              <ChevronRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
+
       </div>
     </section>
   );
