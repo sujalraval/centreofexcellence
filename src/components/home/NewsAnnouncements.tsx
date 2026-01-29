@@ -168,7 +168,7 @@ const NewsAnnouncements = () => {
               ))}
             </div>
           </div>
-          
+
           {/* View All Announcements Button */}
           <div className="mt-8 text-center">
             <Link

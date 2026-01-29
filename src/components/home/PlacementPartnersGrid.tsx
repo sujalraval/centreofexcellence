@@ -8,7 +8,7 @@ interface PlacementPartner {
   logo: string; // URL to the logo image
   url: string; // Website URL
   expertise: string; // Area of expertise
-  status: 'Active' | 'Inactive' | 'Pending'; // Status of partnership
+  status: "Active" | "Inactive" | "Pending"; // Status of partnership
   brief: string; // Brief description
 }
 
@@ -21,7 +21,8 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.iifl.com",
     expertise: "Financial Services, Legal Compliance",
     status: "Active",
-    brief: "Leading financial services company offering opportunities in legal compliance."
+    brief:
+      "Leading financial services company offering opportunities in legal compliance.",
   },
   {
     id: 2,
@@ -30,7 +31,7 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.tcs.com",
     expertise: "Corporate Law, IT Legal Affairs",
     status: "Active",
-    brief: "Global IT consulting firm with dedicated legal department."
+    brief: "Global IT consulting firm with dedicated legal department.",
   },
   {
     id: 3,
@@ -39,7 +40,8 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.jspl.com",
     expertise: "Industrial Law, Environmental Compliance",
     status: "Active",
-    brief: "Major steel manufacturing company with extensive legal requirements."
+    brief:
+      "Major steel manufacturing company with extensive legal requirements.",
   },
   {
     id: 4,
@@ -48,7 +50,7 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.phoenixlegal.in",
     expertise: "Corporate Law, M&A, Disputes",
     status: "Active",
-    brief: "Top-tier law firm specializing in corporate law and disputes."
+    brief: "Top-tier law firm specializing in corporate law and disputes.",
   },
   {
     id: 5,
@@ -57,7 +59,7 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.khaitanco.com",
     expertise: "Banking Law, Securities Law",
     status: "Pending",
-    brief: "Premier law firm with expertise in banking and securities law."
+    brief: "Premier law firm with expertise in banking and securities law.",
   },
   {
     id: 6,
@@ -66,8 +68,9 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.clelegal.com",
     expertise: "Tax Law, Corporate Advisory",
     status: "Active",
-    brief: "Leading firm with strong practice in tax law and advisory services."
-  }
+    brief:
+      "Leading firm with strong practice in tax law and advisory services.",
+  },
 ];
 
 const PlacementPartnersGrid = () => {
@@ -83,7 +86,7 @@ const PlacementPartnersGrid = () => {
             </h2>
           </div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Connect with our industry partners who provide career opportunities 
+            Connect with our industry partners who provide career opportunities
             and professional growth for our students.
           </p>
         </div>
@@ -91,8 +94,8 @@ const PlacementPartnersGrid = () => {
         {/* Partners Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {dummyPartners.slice(0, 6).map((partner) => (
-            <div 
-              key={partner.id} 
+            <div
+              key={partner.id}
               className="bg-gray-50 rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow border border-gray-200"
             >
               <div className="flex items-start gap-4">
@@ -104,35 +107,41 @@ const PlacementPartnersGrid = () => {
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = `https://placehold.co/100x100/0a0e72/FFFFFF?text=${partner.name.charAt(0)}`;
+                        target.src = `https://placehold.co/100x100/0a0e72/FFFFFF?text=${partner.name.charAt(
+                          0
+                        )}`;
                       }}
                     />
                   </div>
                 </div>
-                
+
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between">
                     <h3 className="text-lg font-bold text-[#0a0e72] truncate">
                       {partner.name}
                     </h3>
-                    <span className={`ml-2 px-2 py-1 rounded-full text-xs font-medium ${
-                      partner.status === 'Active' ? 'bg-green-100 text-green-800' :
-                      partner.status === 'Pending' ? 'bg-yellow-100 text-yellow-800' :
-                      'bg-red-100 text-red-800'
-                    }`}>
+                    <span
+                      className={`ml-2 px-2 py-1 rounded-full text-xs font-medium ${
+                        partner.status === "Active"
+                          ? "bg-green-100 text-green-800"
+                          : partner.status === "Pending"
+                          ? "bg-yellow-100 text-yellow-800"
+                          : "bg-red-100 text-red-800"
+                      }`}
+                    >
                       {partner.status}
                     </span>
                   </div>
-                  
+
                   <div className="mt-2 flex items-center text-sm text-gray-600">
                     <Briefcase className="w-4 h-4 mr-1" />
                     <span className="truncate">{partner.expertise}</span>
                   </div>
-                  
+
                   <p className="text-sm text-gray-700 mt-2 line-clamp-2">
                     {partner.brief}
                   </p>
-                  
+
                   <div className="mt-4">
                     <a
                       href={partner.url}

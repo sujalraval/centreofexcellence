@@ -8,6 +8,8 @@ import NewsAnnouncements from "./components/home/NewsAnnouncements";
 import CampusHighlights from "./components/home/CampusHighlights.js";
 import PlacementPartnersGrid from "./components/home/PlacementPartnersGrid";
 import AchievementsGrid from "./components/home/AchievementsGrid";
+import SuccessStoriesGrid from "./components/home/SuccessStoriesGrid";
+import RecognitionGrid from "./components/home/RecognitionGrid";
 import CampusFacilitiesPage from "./components/campus/CampusFacilitiesPage";
 import FacilityDetailPage from "./components/campus/FacilityDetailPage";
 import EventsCalendar from "./components/home/EventsCalendar.js";
@@ -40,10 +42,12 @@ import AnnouncementDetailPage from "./components/AnnouncementDetailPage";
 import CircularsPage from "./components/CircularsPage";
 import PlacementPartnersPage from "./components/PlacementPartnersPage";
 import AchievementsPage from "./components/AchievementsPage";
+import SuccessStoriesPage from "./components/SuccessStoriesPage";
 import EventsActivityPage from "./components/EventsActivityPage";
 import StudentActivityPage from "./components/StudentActivityPage";
 import TestimonialsPage from "./components/TestimonialsPage";
 import MouListingPage from "./components/MouListingPage";
+import RecognitionPage from "./components/RecognitionPage";
 
 function App() {
   return (
@@ -64,6 +68,8 @@ function App() {
               <EventsCalendar />
               <PlacementPartnersGrid />
               <AchievementsGrid />
+              <SuccessStoriesGrid />
+              <RecognitionGrid />
               <EventsGallery />
               <SupportersPartners />
             </main>
@@ -91,10 +97,12 @@ function App() {
         <Route path="/circulars" element={<CircularsPage />} />
         <Route path="/placement-partners" element={<PlacementPartnersPage />} />
         <Route path="/achievements" element={<AchievementsPage />} />
+        <Route path="/success-stories" element={<SuccessStoriesPage />} />
         <Route path="/events-activities" element={<EventsActivityPage />} />
         <Route path="/student-activities" element={<StudentActivityPage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
         <Route path="/mou-agreements" element={<MouListingPage />} />
+        <Route path="/recognitions" element={<RecognitionPage />} />
         <Route path="/campus/facilities" element={<CampusFacilitiesPage />} />
         <Route path="/campus/facilities/:id" element={<FacilityDetailPage />} />
 

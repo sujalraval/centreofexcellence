@@ -1,6 +1,5 @@
 import React from "react";
 
-
 interface PartnerLogo {
   id: number;
   src: string;
@@ -54,8 +53,6 @@ const SupportersPartners: React.FC = () => {
             </div>
           ))}
         </div>
-
-
       </div>
     </section>
   );

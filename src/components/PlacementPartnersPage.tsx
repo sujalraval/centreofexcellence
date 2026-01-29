@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { Search, Globe, Briefcase, CheckCircle, XCircle, Clock, Building2 } from "lucide-react";
+import {
+  Search,
+  Globe,
+  Briefcase,
+  CheckCircle,
+  XCircle,
+  Clock,
+  Building2,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 // Define the placement partner interface
@@ -9,7 +17,7 @@ interface PlacementPartner {
   logo: string; // URL to the logo image
   url: string; // Website URL
   expertise: string; // Area of expertise
-  status: 'Active' | 'Inactive' | 'Pending'; // Status of partnership
+  status: "Active" | "Inactive" | "Pending"; // Status of partnership
   brief: string; // Brief description
 }
 
@@ -22,7 +30,8 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.iifl.com",
     expertise: "Financial Services, Legal Compliance",
     status: "Active",
-    brief: "Leading financial services company offering opportunities in legal compliance and regulatory affairs for law graduates."
+    brief:
+      "Leading financial services company offering opportunities in legal compliance and regulatory affairs for law graduates.",
   },
   {
     id: 2,
@@ -31,7 +40,8 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.tcs.com",
     expertise: "Corporate Law, IT Legal Affairs",
     status: "Active",
-    brief: "Global IT consulting firm with dedicated legal department for corporate law and intellectual property matters."
+    brief:
+      "Global IT consulting firm with dedicated legal department for corporate law and intellectual property matters.",
   },
   {
     id: 3,
@@ -40,7 +50,8 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.jspl.com",
     expertise: "Industrial Law, Environmental Compliance",
     status: "Active",
-    brief: "Major steel manufacturing company with extensive legal requirements in industrial and environmental law."
+    brief:
+      "Major steel manufacturing company with extensive legal requirements in industrial and environmental law.",
   },
   {
     id: 4,
@@ -49,7 +60,8 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.phoenixlegal.in",
     expertise: "Corporate Law, M&A, Disputes",
     status: "Active",
-    brief: "Top-tier law firm specializing in corporate law, mergers & acquisitions, and commercial disputes."
+    brief:
+      "Top-tier law firm specializing in corporate law, mergers & acquisitions, and commercial disputes.",
   },
   {
     id: 5,
@@ -58,7 +70,8 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.khaitanco.com",
     expertise: "Banking Law, Securities Law, Litigation",
     status: "Active",
-    brief: "Premier law firm with expertise in banking, securities, and high-stakes litigation matters."
+    brief:
+      "Premier law firm with expertise in banking, securities, and high-stakes litigation matters.",
   },
   {
     id: 6,
@@ -67,7 +80,8 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.clelegal.com",
     expertise: "Tax Law, Corporate Advisory",
     status: "Pending",
-    brief: "Leading law firm with strong practice in tax law and corporate advisory services."
+    brief:
+      "Leading law firm with strong practice in tax law and corporate advisory services.",
   },
   {
     id: 7,
@@ -76,7 +90,8 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.srasoc.com",
     expertise: "Project Finance, Infrastructure Law",
     status: "Active",
-    brief: "Specialized law firm focusing on project finance and infrastructure development legal matters."
+    brief:
+      "Specialized law firm focusing on project finance and infrastructure development legal matters.",
   },
   {
     id: 8,
@@ -85,8 +100,9 @@ const dummyPartners: PlacementPartner[] = [
     url: "https://www.jsa.in",
     expertise: "Intellectual Property, Competition Law",
     status: "Inactive",
-    brief: "Established firm with strong IP and competition law practices, previously active partner."
-  }
+    brief:
+      "Established firm with strong IP and competition law practices, previously active partner.",
+  },
 ];
 
 const PlacementPartnersPage = () => {
@@ -96,23 +112,24 @@ const PlacementPartnersPage = () => {
   const statusColors = {
     Active: "bg-green-100 text-green-800",
     Inactive: "bg-red-100 text-red-800",
-    Pending: "bg-yellow-100 text-yellow-800"
+    Pending: "bg-yellow-100 text-yellow-800",
   };
 
   const statusIcons = {
     Active: <CheckCircle className="w-4 h-4" />,
     Inactive: <XCircle className="w-4 h-4" />,
-    Pending: <Clock className="w-4 h-4" />
+    Pending: <Clock className="w-4 h-4" />,
   };
 
-  const filteredPartners = dummyPartners.filter(partner => {
-    const matchesSearch = 
+  const filteredPartners = dummyPartners.filter((partner) => {
+    const matchesSearch =
       partner.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       partner.expertise.toLowerCase().includes(searchTerm.toLowerCase()) ||
       partner.brief.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    const matchesStatus = selectedStatus === "all" || partner.status === selectedStatus;
-    
+
+    const matchesStatus =
+      selectedStatus === "all" || partner.status === selectedStatus;
+
     return matchesSearch && matchesStatus;
   });
 
@@ -125,8 +142,9 @@ const PlacementPartnersPage = () => {
             Placement Partners
           </h1>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Our esteemed industry partners who provide career opportunities for our students. 
-            These organizations collaborate with us to offer internships, training, and placement opportunities.
+            Our esteemed industry partners who provide career opportunities for
+            our students. These organizations collaborate with us to offer
+            internships, training, and placement opportunities.
           </p>
         </div>
 
@@ -140,19 +158,19 @@ const PlacementPartnersPage = () => {
           </div>
           <div className="bg-white rounded-xl shadow-sm p-6 text-center">
             <div className="text-3xl font-bold text-green-600 mb-2">
-              {dummyPartners.filter(p => p.status === 'Active').length}
+              {dummyPartners.filter((p) => p.status === "Active").length}
             </div>
             <div className="text-gray-600">Active Partners</div>
           </div>
           <div className="bg-white rounded-xl shadow-sm p-6 text-center">
             <div className="text-3xl font-bold text-yellow-600 mb-2">
-              {dummyPartners.filter(p => p.status === 'Pending').length}
+              {dummyPartners.filter((p) => p.status === "Pending").length}
             </div>
             <div className="text-gray-600">Pending Partners</div>
           </div>
           <div className="bg-white rounded-xl shadow-sm p-6 text-center">
             <div className="text-3xl font-bold text-red-600 mb-2">
-              {dummyPartners.filter(p => p.status === 'Inactive').length}
+              {dummyPartners.filter((p) => p.status === "Inactive").length}
             </div>
             <div className="text-gray-600">Inactive Partners</div>
           </div>
@@ -189,8 +207,8 @@ const PlacementPartnersPage = () => {
         {/* Partners Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPartners.map((partner) => (
-            <div 
-              key={partner.id} 
+            <div
+              key={partner.id}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200"
             >
               {/* Partner Header */}
@@ -204,23 +222,29 @@ const PlacementPartnersPage = () => {
                         className="w-full h-full object-cover"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
-                          target.src = `https://placehold.co/100x100/0a0e72/FFFFFF?text=${partner.name.charAt(0)}`;
+                          target.src = `https://placehold.co/100x100/0a0e72/FFFFFF?text=${partner.name.charAt(
+                            0
+                          )}`;
                         }}
                       />
                     </div>
                   </div>
-                  
+
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between">
                       <h3 className="text-xl font-bold text-[#0a0e72] truncate">
                         {partner.name}
                       </h3>
-                      <span className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${statusColors[partner.status]}`}>
+                      <span
+                        className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${
+                          statusColors[partner.status]
+                        }`}
+                      >
                         {statusIcons[partner.status]}
                         {partner.status}
                       </span>
                     </div>
-                    
+
                     <div className="mt-2 flex items-center text-sm text-gray-600">
                       <Briefcase className="w-4 h-4 mr-1" />
                       <span className="truncate">{partner.expertise}</span>
@@ -251,7 +275,7 @@ const PlacementPartnersPage = () => {
                     <Globe className="w-4 h-4" />
                     Visit Website
                   </a>
-                  
+
                   <button className="flex items-center gap-2 px-4 py-2 border border-[#0a0e72] text-[#0a0e72] rounded-lg hover:bg-[#0a0e72] hover:text-white transition-colors text-sm font-medium">
                     <Briefcase className="w-4 h-4" />
                     View Opportunities
@@ -268,16 +292,23 @@ const PlacementPartnersPage = () => {
             <div className="text-gray-400 mb-4">
               <Building2 className="w-16 h-16 mx-auto" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-600 mb-2">No placement partners found</h3>
-            <p className="text-gray-500">Try adjusting your search or filter criteria</p>
+            <h3 className="text-xl font-semibold text-gray-600 mb-2">
+              No placement partners found
+            </h3>
+            <p className="text-gray-500">
+              Try adjusting your search or filter criteria
+            </p>
           </div>
         )}
 
         {/* Call to Action */}
         <div className="mt-12 bg-gradient-to-r from-[#0a0e72] to-blue-700 rounded-xl p-8 text-center text-white">
-          <h2 className="text-2xl font-bold mb-4">Interested in Partnering with Us?</h2>
+          <h2 className="text-2xl font-bold mb-4">
+            Interested in Partnering with Us?
+          </h2>
           <p className="mb-6 max-w-2xl mx-auto opacity-90">
-            Connect with us to explore placement opportunities for our talented students and contribute to their professional growth.
+            Connect with us to explore placement opportunities for our talented
+            students and contribute to their professional growth.
           </p>
           <Link
             to="/contact"

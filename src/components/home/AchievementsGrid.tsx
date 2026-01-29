@@ -13,7 +13,7 @@ interface Achievement {
   certificateUrl: string; // URL to the certificate
   images: string[]; // Additional images
   category: string; // Category of the award
-  level: 'Local' | 'Regional' | 'National' | 'International'; // Level of achievement
+  level: "Local" | "Regional" | "National" | "International"; // Level of achievement
   url: string; // URL to more information
 }
 
@@ -26,15 +26,16 @@ const dummyAchievements: Achievement[] = [
     dateOfAward: "2024-12-15",
     awardFor: "Outstanding Legal Education Program",
     venue: "New Delhi, India",
-    photoUrl: "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5a?w=600&h=400&fit=crop",
+    photoUrl:
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5a?w=600&h=400&fit=crop",
     certificateUrl: "/certificates/best-law-school-2024.pdf",
     images: [
       "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5a?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5b?w=400&h=300&fit=crop"
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5b?w=400&h=300&fit=crop",
     ],
     category: "Education",
     level: "National",
-    url: "https://educationcouncil.gov/awards"
+    url: "https://educationcouncil.gov/awards",
   },
   {
     id: 2,
@@ -43,15 +44,16 @@ const dummyAchievements: Achievement[] = [
     dateOfAward: "2024-11-20",
     awardFor: "Digital Learning Platform Innovation",
     venue: "London, UK",
-    photoUrl: "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5c?w=600&h=400&fit=crop",
+    photoUrl:
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5c?w=600&h=400&fit=crop",
     certificateUrl: "/certificates/innovation-award-2024.pdf",
     images: [
       "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5c?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5d?w=400&h=300&fit=crop"
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5d?w=400&h=300&fit=crop",
     ],
     category: "Innovation",
     level: "International",
-    url: "https://internationallegal.org/awards"
+    url: "https://internationallegal.org/awards",
   },
   {
     id: 3,
@@ -60,34 +62,40 @@ const dummyAchievements: Achievement[] = [
     dateOfAward: "2024-10-05",
     awardFor: "Sustainable Legal Practices Initiative",
     venue: "Mumbai, India",
-    photoUrl: "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5e?w=600&h=400&fit=crop",
+    photoUrl:
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5e?w=600&h=400&fit=crop",
     certificateUrl: "/certificates/env-law-excellence-2024.pdf",
     images: [
       "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5e?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5f?w=400&h=300&fit=crop"
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5f?w=400&h=300&fit=crop",
     ],
     category: "Environmental",
     level: "Regional",
-    url: "https://greenlawfoundation.org"
-  }
+    url: "https://greenlawfoundation.org",
+  },
 ];
 
 const AchievementsGrid = () => {
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
     });
   };
 
   const getLevelColor = (level: string) => {
-    switch(level) {
-      case 'Local': return 'bg-blue-100 text-blue-800';
-      case 'Regional': return 'bg-purple-100 text-purple-800';
-      case 'National': return 'bg-green-100 text-green-800';
-      case 'International': return 'bg-yellow-100 text-yellow-800';
-      default: return 'bg-gray-100 text-gray-800';
+    switch (level) {
+      case "Local":
+        return "bg-blue-100 text-blue-800";
+      case "Regional":
+        return "bg-purple-100 text-purple-800";
+      case "National":
+        return "bg-green-100 text-green-800";
+      case "International":
+        return "bg-yellow-100 text-yellow-800";
+      default:
+        return "bg-gray-100 text-gray-800";
     }
   };
 
@@ -103,16 +111,17 @@ const AchievementsGrid = () => {
             </h2>
           </div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Celebrating our accomplishments and recognizing the excellence of our students, faculty, 
-            and institution through various awards and recognitions.
+            Celebrating our accomplishments and recognizing the excellence of
+            our students, faculty, and institution through various awards and
+            recognitions.
           </p>
         </div>
 
         {/* Achievements Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {dummyAchievements.slice(0, 3).map((achievement) => (
-            <div 
-              key={achievement.id} 
+            <div
+              key={achievement.id}
               className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow border border-gray-200"
             >
               <div className="flex items-start gap-4">
@@ -129,31 +138,37 @@ const AchievementsGrid = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between">
                     <h3 className="text-lg font-bold text-[#0a0e72] truncate">
                       {achievement.title}
                     </h3>
-                    <span className={`ml-2 px-2 py-1 rounded-full text-xs font-medium ${getLevelColor(achievement.level)}`}>
+                    <span
+                      className={`ml-2 px-2 py-1 rounded-full text-xs font-medium ${getLevelColor(
+                        achievement.level
+                      )}`}
+                    >
                       {achievement.level}
                     </span>
                   </div>
-                  
+
                   <div className="mt-2 flex items-center text-sm text-gray-600">
                     <Building2 className="w-4 h-4 mr-1" />
-                    <span className="truncate">{achievement.awardingOrganisation}</span>
+                    <span className="truncate">
+                      {achievement.awardingOrganisation}
+                    </span>
                   </div>
-                  
+
                   <div className="mt-1 flex items-center text-sm text-gray-600">
                     <Calendar className="w-4 h-4 mr-1" />
                     <span>{formatDate(achievement.dateOfAward)}</span>
                   </div>
-                  
+
                   <p className="text-sm text-gray-700 mt-2 line-clamp-2">
                     {achievement.awardFor}
                   </p>
-                  
+
                   <div className="mt-3">
                     <span className="inline-block px-2 py-1 bg-[#0a0e72]/10 text-[#0a0e72] rounded-full text-xs font-medium">
                       {achievement.category}

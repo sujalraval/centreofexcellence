@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { Search, Calendar, Trophy, Building2, MapPin, Globe, Award } from "lucide-react";
+import {
+  Search,
+  Calendar,
+  Trophy,
+  Building2,
+  MapPin,
+  Globe,
+  Award,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 // Define the achievement interface
@@ -14,7 +22,7 @@ interface Achievement {
   certificateUrl: string; // URL to the certificate
   images: string[]; // Additional images
   category: string; // Category of the award
-  level: 'Local' | 'Regional' | 'National' | 'International'; // Level of achievement
+  level: "Local" | "Regional" | "National" | "International"; // Level of achievement
   url: string; // URL to more information
 }
 
@@ -27,15 +35,16 @@ const dummyAchievements: Achievement[] = [
     dateOfAward: "2024-12-15",
     awardFor: "Outstanding Legal Education Program",
     venue: "New Delhi, India",
-    photoUrl: "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5a?w=600&h=400&fit=crop",
+    photoUrl:
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5a?w=600&h=400&fit=crop",
     certificateUrl: "/certificates/best-law-school-2024.pdf",
     images: [
       "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5a?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5b?w=400&h=300&fit=crop"
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5b?w=400&h=300&fit=crop",
     ],
     category: "Education",
     level: "National",
-    url: "https://educationcouncil.gov/awards"
+    url: "https://educationcouncil.gov/awards",
   },
   {
     id: 2,
@@ -44,15 +53,16 @@ const dummyAchievements: Achievement[] = [
     dateOfAward: "2024-11-20",
     awardFor: "Digital Learning Platform Innovation",
     venue: "London, UK",
-    photoUrl: "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5c?w=600&h=400&fit=crop",
+    photoUrl:
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5c?w=600&h=400&fit=crop",
     certificateUrl: "/certificates/innovation-award-2024.pdf",
     images: [
       "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5c?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5d?w=400&h=300&fit=crop"
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5d?w=400&h=300&fit=crop",
     ],
     category: "Innovation",
     level: "International",
-    url: "https://internationallegal.org/awards"
+    url: "https://internationallegal.org/awards",
   },
   {
     id: 3,
@@ -61,15 +71,16 @@ const dummyAchievements: Achievement[] = [
     dateOfAward: "2024-10-05",
     awardFor: "Sustainable Legal Practices Initiative",
     venue: "Mumbai, India",
-    photoUrl: "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5e?w=600&h=400&fit=crop",
+    photoUrl:
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5e?w=600&h=400&fit=crop",
     certificateUrl: "/certificates/env-law-excellence-2024.pdf",
     images: [
       "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5e?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5f?w=400&h=300&fit=crop"
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c5f?w=400&h=300&fit=crop",
     ],
     category: "Environmental",
     level: "Regional",
-    url: "https://greenlawfoundation.org"
+    url: "https://greenlawfoundation.org",
   },
   {
     id: 4,
@@ -78,15 +89,16 @@ const dummyAchievements: Achievement[] = [
     dateOfAward: "2024-09-15",
     awardFor: "Academic Excellence in Constitutional Law",
     venue: "Ahmedabad, India",
-    photoUrl: "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6a?w=600&h=400&fit=crop",
+    photoUrl:
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6a?w=600&h=400&fit=crop",
     certificateUrl: "/certificates/student-excellence-2024.pdf",
     images: [
       "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6a?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6b?w=400&h=300&fit=crop"
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6b?w=400&h=300&fit=crop",
     ],
     category: "Academic",
     level: "Local",
-    url: "https://gujaratuniversity.ac.in"
+    url: "https://gujaratuniversity.ac.in",
   },
   {
     id: 5,
@@ -95,15 +107,16 @@ const dummyAchievements: Achievement[] = [
     dateOfAward: "2024-08-10",
     awardFor: "Outstanding Contribution to Human Rights Education",
     venue: "Geneva, Switzerland",
-    photoUrl: "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6c?w=600&h=400&fit=crop",
+    photoUrl:
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6c?w=600&h=400&fit=crop",
     certificateUrl: "/certificates/hr-advocacy-award-2024.pdf",
     images: [
       "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6c?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6d?w=400&h=300&fit=crop"
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6d?w=400&h=300&fit=crop",
     ],
     category: "Human Rights",
     level: "International",
-    url: "https://unhrcommission.org"
+    url: "https://unhrcommission.org",
   },
   {
     id: 6,
@@ -112,16 +125,17 @@ const dummyAchievements: Achievement[] = [
     dateOfAward: "2024-07-22",
     awardFor: "Groundbreaking Research in Intellectual Property Law",
     venue: "New Delhi, India",
-    photoUrl: "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6e?w=600&h=400&fit=crop",
+    photoUrl:
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6e?w=600&h=400&fit=crop",
     certificateUrl: "/certificates/research-excellence-2024.pdf",
     images: [
       "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6e?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6f?w=400&h=300&fit=crop"
+      "https://images.unsplash.com/photo-1596466596120-2a8e4b5d5c6f?w=400&h=300&fit=crop",
     ],
     category: "Research",
     level: "National",
-    url: "https://indianbarassociation.org"
-  }
+    url: "https://indianbarassociation.org",
+  },
 ];
 
 const AchievementsPage = () => {
@@ -129,37 +143,54 @@ const AchievementsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedLevel, setSelectedLevel] = useState("all");
 
-  const categories = ["all", "Education", "Innovation", "Environmental", "Academic", "Human Rights", "Research"];
+  const categories = [
+    "all",
+    "Education",
+    "Innovation",
+    "Environmental",
+    "Academic",
+    "Human Rights",
+    "Research",
+  ];
   const levels = ["all", "Local", "Regional", "National", "International"];
 
-  const filteredAchievements = dummyAchievements.filter(achievement => {
-    const matchesSearch = 
+  const filteredAchievements = dummyAchievements.filter((achievement) => {
+    const matchesSearch =
       achievement.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      achievement.awardingOrganisation.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      achievement.awardingOrganisation
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase()) ||
       achievement.awardFor.toLowerCase().includes(searchTerm.toLowerCase()) ||
       achievement.category.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    const matchesCategory = selectedCategory === "all" || achievement.category === selectedCategory;
-    const matchesLevel = selectedLevel === "all" || achievement.level === selectedLevel;
-    
+
+    const matchesCategory =
+      selectedCategory === "all" || achievement.category === selectedCategory;
+    const matchesLevel =
+      selectedLevel === "all" || achievement.level === selectedLevel;
+
     return matchesSearch && matchesCategory && matchesLevel;
   });
 
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
     });
   };
 
   const getLevelColor = (level: string) => {
-    switch(level) {
-      case 'Local': return 'bg-blue-100 text-blue-800';
-      case 'Regional': return 'bg-purple-100 text-purple-800';
-      case 'National': return 'bg-green-100 text-green-800';
-      case 'International': return 'bg-yellow-100 text-yellow-800';
-      default: return 'bg-gray-100 text-gray-800';
+    switch (level) {
+      case "Local":
+        return "bg-blue-100 text-blue-800";
+      case "Regional":
+        return "bg-purple-100 text-purple-800";
+      case "National":
+        return "bg-green-100 text-green-800";
+      case "International":
+        return "bg-yellow-100 text-yellow-800";
+      default:
+        return "bg-gray-100 text-gray-800";
     }
   };
 
@@ -172,8 +203,9 @@ const AchievementsPage = () => {
             Achievements & Awards
           </h1>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Celebrating our accomplishments and recognizing the excellence of our students, faculty, 
-            and institution through various awards and recognitions received from esteemed organizations.
+            Celebrating our accomplishments and recognizing the excellence of
+            our students, faculty, and institution through various awards and
+            recognitions received from esteemed organizations.
           </p>
         </div>
 
@@ -187,19 +219,27 @@ const AchievementsPage = () => {
           </div>
           <div className="bg-white rounded-xl shadow-sm p-6 text-center">
             <div className="text-3xl font-bold text-green-600 mb-2">
-              {dummyAchievements.filter(a => a.level === 'National').length + dummyAchievements.filter(a => a.level === 'International').length}
+              {dummyAchievements.filter((a) => a.level === "National").length +
+                dummyAchievements.filter((a) => a.level === "International")
+                  .length}
             </div>
             <div className="text-gray-600">National/Intl Awards</div>
           </div>
           <div className="bg-white rounded-xl shadow-sm p-6 text-center">
             <div className="text-3xl font-bold text-purple-600 mb-2">
-              {dummyAchievements.filter(a => a.category === 'Academic').length}
+              {
+                dummyAchievements.filter((a) => a.category === "Academic")
+                  .length
+              }
             </div>
             <div className="text-gray-600">Academic Awards</div>
           </div>
           <div className="bg-white rounded-xl shadow-sm p-6 text-center">
             <div className="text-3xl font-bold text-blue-600 mb-2">
-              {new Set(dummyAchievements.map(a => a.awardingOrganisation)).size}
+              {
+                new Set(dummyAchievements.map((a) => a.awardingOrganisation))
+                  .size
+              }
             </div>
             <div className="text-gray-600">Distinct Organizations</div>
           </div>
@@ -224,19 +264,19 @@ const AchievementsPage = () => {
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
               >
-                {categories.map(category => (
+                {categories.map((category) => (
                   <option key={category} value={category}>
                     {category === "all" ? "All Categories" : category}
                   </option>
                 ))}
               </select>
-              
+
               <select
                 className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0a0e72] focus:border-transparent"
                 value={selectedLevel}
                 onChange={(e) => setSelectedLevel(e.target.value)}
               >
-                {levels.map(level => (
+                {levels.map((level) => (
                   <option key={level} value={level}>
                     {level === "all" ? "All Levels" : level}
                   </option>
@@ -249,8 +289,8 @@ const AchievementsPage = () => {
         {/* Achievements Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredAchievements.map((achievement) => (
-            <div 
-              key={achievement.id} 
+            <div
+              key={achievement.id}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200"
             >
               {/* Achievement Header */}
@@ -262,21 +302,25 @@ const AchievementsPage = () => {
                       {achievement.title}
                     </h3>
                   </div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${getLevelColor(achievement.level)}`}>
+                  <span
+                    className={`px-3 py-1 rounded-full text-xs font-medium ${getLevelColor(
+                      achievement.level
+                    )}`}
+                  >
                     {achievement.level}
                   </span>
                 </div>
-                
+
                 <div className="mt-3 flex items-center text-sm text-gray-600">
                   <Building2 className="w-4 h-4 mr-1" />
                   <span>{achievement.awardingOrganisation}</span>
                 </div>
-                
+
                 <div className="mt-2 flex items-center text-sm text-gray-600">
                   <Calendar className="w-4 h-4 mr-1" />
                   <span>{formatDate(achievement.dateOfAward)}</span>
                 </div>
-                
+
                 <div className="mt-2 flex items-center text-sm text-gray-600">
                   <MapPin className="w-4 h-4 mr-1" />
                   <span>{achievement.venue}</span>
@@ -304,7 +348,9 @@ const AchievementsPage = () => {
 
                 {/* Award Photo */}
                 <div className="mb-4">
-                  <h4 className="font-semibold text-gray-800 mb-2">Award Photo</h4>
+                  <h4 className="font-semibold text-gray-800 mb-2">
+                    Award Photo
+                  </h4>
                   <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
                     <img
                       src={achievement.photoUrl}
@@ -328,7 +374,7 @@ const AchievementsPage = () => {
                     <Award className="w-4 h-4" />
                     View Certificate
                   </a>
-                  
+
                   <a
                     href={achievement.url}
                     target="_blank"
@@ -350,8 +396,12 @@ const AchievementsPage = () => {
             <div className="text-gray-400 mb-4">
               <Trophy className="w-16 h-16 mx-auto" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-600 mb-2">No achievements found</h3>
-            <p className="text-gray-500">Try adjusting your search or filter criteria</p>
+            <h3 className="text-xl font-semibold text-gray-600 mb-2">
+              No achievements found
+            </h3>
+            <p className="text-gray-500">
+              Try adjusting your search or filter criteria
+            </p>
           </div>
         )}
 
@@ -359,7 +409,8 @@ const AchievementsPage = () => {
         <div className="mt-12 bg-gradient-to-r from-[#0a0e72] to-blue-700 rounded-xl p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-4">Celebrating Excellence</h2>
           <p className="mb-6 max-w-2xl mx-auto opacity-90">
-            Our achievements reflect our commitment to academic excellence, innovation, and impactful contributions to the legal field.
+            Our achievements reflect our commitment to academic excellence,
+            innovation, and impactful contributions to the legal field.
           </p>
           <Link
             to="/"
