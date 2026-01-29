@@ -13,7 +13,9 @@ import {
   Calendar,
   Newspaper,
   Shield,
+  ChevronRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CampusHighlights = () => {
   const facilities = [
@@ -163,6 +165,17 @@ const CampusHighlights = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View All Button */}
+        <div className="text-center mt-12">
+          <Link
+            to="/campus/facilities"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0e72] text-white rounded-lg hover:bg-[#080b5a] transition-colors font-semibold text-lg"
+          >
+            View All Campus Facilities
+            <ChevronRight className="w-5 h-5" />
+          </Link>
         </div>
       </div>
     </section>

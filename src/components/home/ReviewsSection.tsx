@@ -107,9 +107,6 @@ const ReviewsSection = () => {
           <h2 className="text-3xl font-bold text-gu-dark">
             Voices of Our Institution
           </h2>
-          <a href="/testimonials" className="text-sm text-gu-primary font-semibold hover:underline mt-2 inline-block">
-            View All Testimonials
-          </a>
           <p className="text-gray-600 mt-2">
             Experiences shared by students, faculty, and distinguished guests
           </p>
@@ -130,8 +127,8 @@ const ReviewsSection = () => {
               {tab === "students"
                 ? "Students"
                 : tab === "faculty"
-                  ? "Faculty"
-                  : "Dignitaries"}
+                ? "Faculty"
+                : "Dignitaries"}
             </button>
           ))}
         </div>
@@ -141,6 +138,14 @@ const ReviewsSection = () => {
           {reviewData[activeTab].map((item: ReviewItem) => (
             <ReviewCard key={item.id} data={item} />
           ))}
+        </div>
+        <div className="mt-6 flex justify-center">
+          <a
+            href="/testimonials"
+            className="inline-flex items-center px-6 py-3 bg-[#0a0e72] text-white rounded-lg hover:bg-[#080b5a] transition-colors font-medium"
+          >
+            View All
+          </a>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 // src/components/EventsCalendar.jsx
 import { MapPin, Users, Clock, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const EventsCalendar = () => {
   const events = [
@@ -95,6 +96,15 @@ const EventsCalendar = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-8 text-center">
+          <Link
+            to="/events-activities"
+            className="inline-flex items-center px-6 py-3 bg-[#0a0e72] text-white rounded-lg hover:bg-[#080b5a] transition-colors font-medium"
+          >
+            View All Events
+          </Link>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-// src/components/events/EventsGalleryPage.tsx
+// src/components/home/EventsGallery.tsx
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ interface EventImage {
   category: string;
 }
 
-const EventsGalleryPage = () => {
+const EventsGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const eventImages: EventImage[] = [
@@ -104,10 +104,10 @@ const EventsGalleryPage = () => {
           </Link>
         ))}
       </div>
-
+      
       <div className="text-center mt-10">
         <Link
-          to="/events-activities"
+          to="/events"
           className="inline-flex items-center px-6 py-3 bg-[#0a0e72] text-white rounded-lg hover:bg-[#080b5a] transition-colors font-medium"
         >
           View All Events
@@ -117,4 +117,4 @@ const EventsGalleryPage = () => {
   );
 };
 
-export default EventsGalleryPage;
+export default EventsGallery;

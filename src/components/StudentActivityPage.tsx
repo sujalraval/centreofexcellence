@@ -39,23 +39,25 @@ const StudentActivityPage = () => {
           id: 1,
           src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600",
           title: "Opening Ceremony",
-          description: "Colorful opening ceremony with traditional performances"
+          description:
+            "Colorful opening ceremony with traditional performances",
         },
         {
           id: 2,
           src: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600",
           title: "Dance Performance",
-          description: "Students showcasing various dance forms"
+          description: "Students showcasing various dance forms",
         },
         {
           id: 3,
           src: "https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&w=600",
           title: "Music Concert",
-          description: "Live music performance by student bands"
-        }
+          description: "Live music performance by student bands",
+        },
       ],
       certificate: "https://example.com/certificates/cultural-fest-2025.pdf",
-      brief: "The Annual Cultural Fest was a grand celebration of arts and culture, featuring dance performances, music concerts, drama plays, and art exhibitions. Over 500 students participated in various competitions and showcases."
+      brief:
+        "The Annual Cultural Fest was a grand celebration of arts and culture, featuring dance performances, music concerts, drama plays, and art exhibitions. Over 500 students participated in various competitions and showcases.",
     },
     {
       id: 2,
@@ -71,16 +73,17 @@ const StudentActivityPage = () => {
           id: 1,
           src: "https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&w=600",
           title: "Athletics Competition",
-          description: "Track and field events with enthusiastic participation"
+          description: "Track and field events with enthusiastic participation",
         },
         {
           id: 2,
           src: "https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=600",
           title: "Team Sports",
-          description: "Basketball and football matches between college teams"
-        }
+          description: "Basketball and football matches between college teams",
+        },
       ],
-      brief: "The Inter-College Sports Meet brought together talented athletes from various colleges for exciting competitions in athletics, team sports, and individual games. Our college emerged victorious in several events."
+      brief:
+        "The Inter-College Sports Meet brought together talented athletes from various colleges for exciting competitions in athletics, team sports, and individual games. Our college emerged victorious in several events.",
     },
     {
       id: 3,
@@ -96,20 +99,23 @@ const StudentActivityPage = () => {
           id: 1,
           src: "https://images.unsplash.com/photo-1589391886085-8b6b0ac72a1a?auto=format&fit=crop&w=600",
           title: "Legal Consultation",
-          description: "Students providing free legal advice to community members"
+          description:
+            "Students providing free legal advice to community members",
         },
         {
           id: 2,
           src: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=600",
           title: "Awareness Session",
-          description: "Educational sessions on legal rights and procedures"
-        }
+          description: "Educational sessions on legal rights and procedures",
+        },
       ],
-      brief: "The Legal Aid Camp provided valuable practical experience for law students while serving the community. Students offered free legal consultations and conducted awareness sessions on various legal topics."
-    }
+      brief:
+        "The Legal Aid Camp provided valuable practical experience for law students while serving the community. Students offered free legal consultations and conducted awareness sessions on various legal topics.",
+    },
   ]);
 
-  const [selectedActivity, setSelectedActivity] = useState<StudentActivity | null>(null);
+  const [selectedActivity, setSelectedActivity] =
+    useState<StudentActivity | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -120,7 +126,7 @@ const StudentActivityPage = () => {
     managedBy: "",
     date: "",
     facultyInCharge: "",
-    brief: ""
+    brief: "",
   });
 
   const handleActivityClick = (activity: StudentActivity) => {
@@ -134,7 +140,7 @@ const StudentActivityPage = () => {
 
   const handlePrevImage = () => {
     if (selectedActivity) {
-      setSelectedImageIndex(prev => 
+      setSelectedImageIndex((prev) =>
         prev === 0 ? selectedActivity.photos.length - 1 : prev - 1
       );
     }
@@ -142,17 +148,19 @@ const StudentActivityPage = () => {
 
   const handleNextImage = () => {
     if (selectedActivity) {
-      setSelectedImageIndex(prev => 
+      setSelectedImageIndex((prev) =>
         prev === selectedActivity.photos.length - 1 ? 0 : prev + 1
       );
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -169,7 +177,7 @@ const StudentActivityPage = () => {
       managedBy: "",
       date: "",
       facultyInCharge: "",
-      brief: ""
+      brief: "",
     });
   };
 
@@ -192,14 +200,17 @@ const StudentActivityPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {activities.map((activity) => (
-              <div 
-                key={activity.id} 
+              <div
+                key={activity.id}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                 onClick={() => handleActivityClick(activity)}
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
-                    src={activity.photos[0]?.src || "https://via.placeholder.com/600x400"}
+                    src={
+                      activity.photos[0]?.src ||
+                      "https://via.placeholder.com/600x400"
+                    }
                     alt={activity.name}
                     className="w-full h-full object-cover"
                   />
@@ -209,26 +220,30 @@ const StudentActivityPage = () => {
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-gu-dark">{activity.name}</h3>
-                  
+                  <h3 className="text-xl font-bold mb-2 text-gu-dark">
+                    {activity.name}
+                  </h3>
+
                   <div className="flex items-center text-sm text-gray-600 mb-2">
                     <Calendar className="w-4 h-4 mr-2" />
                     {activity.date}
                   </div>
-                  
+
                   <div className="flex items-center text-sm text-gray-600 mb-2">
                     <MapPin className="w-4 h-4 mr-2" />
                     {activity.venue}
                   </div>
-                  
+
                   <div className="flex items-center text-sm text-gray-600 mb-3">
                     <Users className="w-4 h-4 mr-2" />
                     {activity.activityFor}
                   </div>
-                  
-                  <p className="text-gray-600 text-sm line-clamp-2">{activity.brief}</p>
+
+                  <p className="text-gray-600 text-sm line-clamp-2">
+                    {activity.brief}
+                  </p>
                 </div>
               </div>
             ))}
@@ -242,72 +257,100 @@ const StudentActivityPage = () => {
           <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
             <div className="p-6">
               <div className="flex justify-between items-start mb-6">
-                <h2 className="text-2xl font-bold text-gu-dark">{selectedActivity.name}</h2>
-                <button 
+                <h2 className="text-2xl font-bold text-gu-dark">
+                  {selectedActivity.name}
+                </h2>
+                <button
                   onClick={closeModal}
                   className="text-gray-500 hover:text-gray-700 text-2xl"
                 >
                   ×
                 </button>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <div className="space-y-4 mb-6">
                     <div className="flex items-center">
                       <Award className="w-5 h-5 mr-3 text-gu-primary" />
                       <div>
-                        <span className="font-semibold text-gray-700">Type:</span>
-                        <span className="ml-2 text-gray-600">{selectedActivity.type}</span>
+                        <span className="font-semibold text-gray-700">
+                          Type:
+                        </span>
+                        <span className="ml-2 text-gray-600">
+                          {selectedActivity.type}
+                        </span>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center">
                       <Users className="w-5 h-5 mr-3 text-gu-primary" />
                       <div>
-                        <span className="font-semibold text-gray-700">Activity For:</span>
-                        <span className="ml-2 text-gray-600">{selectedActivity.activityFor}</span>
+                        <span className="font-semibold text-gray-700">
+                          Activity For:
+                        </span>
+                        <span className="ml-2 text-gray-600">
+                          {selectedActivity.activityFor}
+                        </span>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center">
                       <MapPin className="w-5 h-5 mr-3 text-gu-primary" />
                       <div>
-                        <span className="font-semibold text-gray-700">Venue:</span>
-                        <span className="ml-2 text-gray-600">{selectedActivity.venue}</span>
+                        <span className="font-semibold text-gray-700">
+                          Venue:
+                        </span>
+                        <span className="ml-2 text-gray-600">
+                          {selectedActivity.venue}
+                        </span>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center">
                       <User className="w-5 h-5 mr-3 text-gu-primary" />
                       <div>
-                        <span className="font-semibold text-gray-700">Managed By:</span>
-                        <span className="ml-2 text-gray-600">{selectedActivity.managedBy}</span>
+                        <span className="font-semibold text-gray-700">
+                          Managed By:
+                        </span>
+                        <span className="ml-2 text-gray-600">
+                          {selectedActivity.managedBy}
+                        </span>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center">
                       <Calendar className="w-5 h-5 mr-3 text-gu-primary" />
                       <div>
-                        <span className="font-semibold text-gray-700">Date:</span>
-                        <span className="ml-2 text-gray-600">{selectedActivity.date}</span>
+                        <span className="font-semibold text-gray-700">
+                          Date:
+                        </span>
+                        <span className="ml-2 text-gray-600">
+                          {selectedActivity.date}
+                        </span>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center">
                       <User className="w-5 h-5 mr-3 text-gu-primary" />
                       <div>
-                        <span className="font-semibold text-gray-700">Faculty In Charge:</span>
-                        <span className="ml-2 text-gray-600">{selectedActivity.facultyInCharge}</span>
+                        <span className="font-semibold text-gray-700">
+                          Faculty In Charge:
+                        </span>
+                        <span className="ml-2 text-gray-600">
+                          {selectedActivity.facultyInCharge}
+                        </span>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="mb-6">
-                    <h3 className="font-semibold text-gu-dark mb-3">Brief Description</h3>
+                    <h3 className="font-semibold text-gu-dark mb-3">
+                      Brief Description
+                    </h3>
                     <p className="text-gray-600">{selectedActivity.brief}</p>
                   </div>
-                  
+
                   {selectedActivity.certificate && (
                     <div className="mb-6">
                       <a
@@ -322,9 +365,11 @@ const StudentActivityPage = () => {
                     </div>
                   )}
                 </div>
-                
+
                 <div>
-                  <h3 className="font-semibold text-gu-dark mb-4">Activity Photos</h3>
+                  <h3 className="font-semibold text-gu-dark mb-4">
+                    Activity Photos
+                  </h3>
                   <div className="mb-6 relative">
                     <div className="relative h-64 w-full bg-gray-100 rounded-lg overflow-hidden">
                       <img
@@ -332,7 +377,7 @@ const StudentActivityPage = () => {
                         alt={selectedActivity.photos[selectedImageIndex].title}
                         className="w-full h-full object-contain"
                       />
-                      
+
                       {selectedActivity.photos.length > 1 && (
                         <>
                           <button
@@ -350,19 +395,30 @@ const StudentActivityPage = () => {
                         </>
                       )}
                     </div>
-                    
+
                     <div className="mt-3">
-                      <h4 className="font-medium text-gu-dark">{selectedActivity.photos[selectedImageIndex].title}</h4>
-                      <p className="text-sm text-gray-600">{selectedActivity.photos[selectedImageIndex].description}</p>
+                      <h4 className="font-medium text-gu-dark">
+                        {selectedActivity.photos[selectedImageIndex].title}
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        {
+                          selectedActivity.photos[selectedImageIndex]
+                            .description
+                        }
+                      </p>
                     </div>
                   </div>
-                  
+
                   {selectedActivity.photos.length > 1 && (
                     <div className="grid grid-cols-3 gap-2">
                       {selectedActivity.photos.map((photo, index) => (
-                        <div 
+                        <div
                           key={photo.id}
-                          className={`cursor-pointer rounded border-2 ${selectedImageIndex === index ? 'border-gu-primary' : 'border-transparent'}`}
+                          className={`cursor-pointer rounded border-2 ${
+                            selectedImageIndex === index
+                              ? "border-gu-primary"
+                              : "border-transparent"
+                          }`}
                           onClick={() => setSelectedImageIndex(index)}
                         >
                           <img
@@ -387,15 +443,17 @@ const StudentActivityPage = () => {
           <div className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="p-6">
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-gu-dark">Add New Activity</h2>
-                <button 
+                <h2 className="text-2xl font-bold text-gu-dark">
+                  Add New Activity
+                </h2>
+                <button
                   onClick={() => setShowForm(false)}
                   className="text-gray-500 hover:text-gray-700 text-2xl"
                 >
                   ×
                 </button>
               </div>
-              
+
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -411,7 +469,7 @@ const StudentActivityPage = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Name of Activity *
@@ -425,7 +483,7 @@ const StudentActivityPage = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Activity for *
@@ -439,7 +497,7 @@ const StudentActivityPage = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Venue *
@@ -453,7 +511,7 @@ const StudentActivityPage = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Managed by *
@@ -467,7 +525,7 @@ const StudentActivityPage = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Date *
@@ -481,7 +539,7 @@ const StudentActivityPage = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Faculty In charge *
@@ -496,7 +554,7 @@ const StudentActivityPage = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Brief *
@@ -510,7 +568,7 @@ const StudentActivityPage = () => {
                     required
                   ></textarea>
                 </div>
-                
+
                 <div className="flex justify-end space-x-3 pt-4">
                   <button
                     type="button"

@@ -6,6 +6,8 @@ import QuickInfoPanel from "./components/home/QuickInfoPanel.js";
 import AboutSnapshot from "./components/home/AboutSnapshot.js";
 import NewsAnnouncements from "./components/home/NewsAnnouncements";
 import CampusHighlights from "./components/home/CampusHighlights.js";
+import CampusFacilitiesPage from "./components/campus/CampusFacilitiesPage";
+import FacilityDetailPage from "./components/campus/FacilityDetailPage";
 import EventsCalendar from "./components/home/EventsCalendar.js";
 import EventsGallery from "./components/home/EventsGallery";
 import ReviewsSection from "./components/home/ReviewsSection";
@@ -32,6 +34,8 @@ import Awards from "./components/students/Awards";
 import StudentSupportServices from "./components/students/StudentSupportServices";
 import BComLLBPage from "./components/academics/BComLLBPage";
 import AnnouncementsPage from "./components/AnnouncementsPage";
+import AnnouncementDetailPage from "./components/AnnouncementDetailPage";
+import CircularsPage from "./components/CircularsPage";
 import EventsActivityPage from "./components/EventsActivityPage";
 import StudentActivityPage from "./components/StudentActivityPage";
 import TestimonialsPage from "./components/TestimonialsPage";
@@ -77,10 +81,14 @@ function App() {
         />
         <Route path="/academics/bcom-llb" element={<BComLLBPage />} />
         <Route path="/announcements" element={<AnnouncementsPage />} />
+        <Route path="/announcements/:id" element={<AnnouncementDetailPage />} />
+        <Route path="/circulars" element={<CircularsPage />} />
         <Route path="/events-activities" element={<EventsActivityPage />} />
         <Route path="/student-activities" element={<StudentActivityPage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
         <Route path="/mou-agreements" element={<MouListingPage />} />
+        <Route path="/campus/facilities" element={<CampusFacilitiesPage />} />
+        <Route path="/campus/facilities/:id" element={<FacilityDetailPage />} />
 
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />

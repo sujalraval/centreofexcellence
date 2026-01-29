@@ -31,9 +31,18 @@ const Header = () => {
         { name: "ARIIA", url: "https://iqac.gujaratuniversity.ac.in/Ariia" },
         { name: "NIRF", url: "https://iqac.gujaratuniversity.ac.in/nirf" },
         { name: "GSIRF", url: "https://iqac.gujaratuniversity.ac.in/gsirf" },
-        { name: "ISO Certification", url: "https://iqac.gujaratuniversity.ac.in/iso" },
-        { name: "Audit Reports", url: "https://iqac.gujaratuniversity.ac.in/audit" },
-        { name: "Certificate", url: "https://iqac.gujaratuniversity.ac.in/certificate" },
+        {
+          name: "ISO Certification",
+          url: "https://iqac.gujaratuniversity.ac.in/iso",
+        },
+        {
+          name: "Audit Reports",
+          url: "https://iqac.gujaratuniversity.ac.in/audit",
+        },
+        {
+          name: "Certificate",
+          url: "https://iqac.gujaratuniversity.ac.in/certificate",
+        },
       ],
     },
     {
@@ -41,7 +50,10 @@ const Header = () => {
       submenu: [
         { name: "NCC", url: "https://www.gujaratuniversity.ac.in/ncc" },
         { name: "NSS", url: "https://www.gujaratuniversity.ac.in/nss" },
-        { name: "Women Development Cell", url: "https://wdc.gujaratuniversity.ac.in/" },
+        {
+          name: "Women Development Cell",
+          url: "https://wdc.gujaratuniversity.ac.in/",
+        },
         { name: "EOC", url: "https://www.gujaratuniversity.ac.in/eoc" },
       ],
     },
@@ -49,11 +61,23 @@ const Header = () => {
       name: "Cell",
       submenu: [
         { name: "Innovation", url: "https://gusec.edu.in/" },
-        { name: "Publication Cell", url: "https://www.gujaratuniversity.ac.in/publicationcell" },
-        { name: "RTI Cell", url: "https://www.gujaratuniversity.ac.in/rticell" },
+        {
+          name: "Publication Cell",
+          url: "https://www.gujaratuniversity.ac.in/publicationcell",
+        },
+        {
+          name: "RTI Cell",
+          url: "https://www.gujaratuniversity.ac.in/rticell",
+        },
         { name: "Placement Cell", url: "http://gupc.gujaratuniversity.ac.in/" },
-        { name: "SC/ST Cell", url: "http://sctcomplaint.gujaratuniversity.ac.in/" },
-        { name: "Anti Ragging Cell", url: "https://www.gujaratuniversity.ac.in/antiragging" },
+        {
+          name: "SC/ST Cell",
+          url: "http://sctcomplaint.gujaratuniversity.ac.in/",
+        },
+        {
+          name: "Anti Ragging Cell",
+          url: "https://www.gujaratuniversity.ac.in/antiragging",
+        },
       ],
     },
     {
@@ -82,7 +106,10 @@ const Header = () => {
         col2: [
           { label: "Co-ordinator Desk", link: "/coordinator-desk" },
           { label: "Moto", link: "/moto" },
-          { label: "News Letter", link: "https://www.coesolgu.edu.in/news-letter" },
+          {
+            label: "News Letter",
+            link: "https://www.coesolgu.edu.in/news-letter",
+          },
         ],
       },
     },
@@ -155,9 +182,12 @@ const Header = () => {
           <div className="flex justify-between items-center h-14 lg:h-20">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <img src="/logo.svg" alt="COE" className="h-9 lg:h-14" />
+              <img src="/logo.svg" alt="COE" className="h-11 lg:h-16" />
               <h1 className="hidden md:block font-semibold text-[#0a0e72]">
                 Centre of Excellence
+                <p className="hidden md:block text-gray-600 text-[12px]">
+                  Gujarat University
+                </p>
               </h1>
             </div>
 
