@@ -26,6 +26,27 @@ const circulars = [
     url: "https://example.com/circulars/3",
     category: "Internship",
   },
+  {
+    id: 4,
+    title: "Revised Academic Calendar 2025-26",
+    date: "15 Mar 2025",
+    url: "https://example.com/circulars/1",
+    category: "Academic",
+  },
+  {
+    id: 5,
+    title: "New Examination Guidelines",
+    date: "10 Mar 2025",
+    url: "https://example.com/circulars/2",
+    category: "Examination",
+  },
+  {
+    id: 6,
+    title: "Summer Internship Opportunities",
+    date: "05 Mar 2025",
+    url: "https://example.com/circulars/3",
+    category: "Internship",
+  },
 ];
 
 const announcements = [
