@@ -1,5 +1,6 @@
 // src/components/home/EventsGallery.tsx
 
+import { ChevronRight } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -104,13 +105,14 @@ const EventsGallery = () => {
           </Link>
         ))}
       </div>
-      
+
       <div className="text-center mt-10">
         <Link
           to="/events"
           className="inline-flex items-center px-6 py-3 bg-[#0a0e72] text-white rounded-lg hover:bg-[#080b5a] transition-colors font-medium"
         >
-          View All Events
+          View All Activities
+          <ChevronRight className="w-5 h-5" />
         </Link>
       </div>
     </section>

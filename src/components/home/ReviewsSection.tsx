@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ReviewItem, ReviewData, ReviewCategory } from "../../types";
+import { ChevronRight } from "lucide-react";
 
 /* -------------------- DATA -------------------- */
 
@@ -127,8 +128,8 @@ const ReviewsSection = () => {
               {tab === "students"
                 ? "Students"
                 : tab === "faculty"
-                ? "Faculty"
-                : "Dignitaries"}
+                  ? "Faculty"
+                  : "Dignitaries"}
             </button>
           ))}
         </div>
@@ -144,7 +145,8 @@ const ReviewsSection = () => {
             href="/testimonials"
             className="inline-flex items-center px-6 py-3 bg-[#0a0e72] text-white rounded-lg hover:bg-[#080b5a] transition-colors font-medium"
           >
-            View All
+            View All Reviews
+            <ChevronRight className="w-5 h-5" />
           </a>
         </div>
       </div>

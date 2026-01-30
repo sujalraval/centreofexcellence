@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Calendar, Target, Building2, ExternalLink } from "lucide-react";
+import {
+  Calendar,
+  Target,
+  Building2,
+  ChevronRight,
+} from "lucide-react";
 
 // Dummy data for featured MOUs (showing only top 3-4 on home page)
 const featuredMouData = [
@@ -57,17 +62,9 @@ const MouSection: React.FC = () => {
             Memorandum of Understanding
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Strategic partnerships that enhance educational excellence and provide valuable opportunities for our students and faculty.
+            Strategic partnerships that enhance educational excellence and
+            provide valuable opportunities for our students and faculty.
           </p>
-          <div className="mt-6">
-            <Link
-              to="/mou-agreements"
-              className="inline-flex items-center px-6 py-3 bg-[#0a0e72] text-white font-medium rounded-lg hover:bg-blue-800 transition-colors duration-300"
-            >
-              View All MOU Agreements
-              <ExternalLink className="ml-2 w-4 h-4" />
-            </Link>
-          </div>
         </div>
 
         {/* Featured MOUs Grid */}
@@ -92,7 +89,7 @@ const MouSection: React.FC = () => {
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `https://placehold.co/80x80/0a0e72/FFFFFF?text=${encodeURIComponent(
-                        mou.organisationName.charAt(0)
+                        mou.organisationName.charAt(0),
                       )}`;
                     }}
                   />
@@ -104,7 +101,7 @@ const MouSection: React.FC = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {mou.organisationName}
                 </h3>
-                
+
                 <div className="flex items-center text-sm text-gray-500 mb-3">
                   <Calendar className="w-4 h-4 mr-2" />
                   <span>{formatDate(mou.date)}</span>
@@ -116,9 +113,7 @@ const MouSection: React.FC = () => {
 
                 <div className="flex items-start mb-4">
                   <Target className="w-4 h-4 text-[#0a0e72] mt-0.5 mr-2 flex-shrink-0" />
-                  <p className="text-sm text-gray-700">
-                    {mou.mouObjective}
-                  </p>
+                  <p className="text-sm text-gray-700">{mou.mouObjective}</p>
                 </div>
 
                 <div className="flex justify-between items-center pt-4 border-t border-gray-100">
@@ -142,6 +137,15 @@ const MouSection: React.FC = () => {
             </div>
           ))}
         </div>
+        <div className="mt-6 flex justify-center center">
+          <Link
+            to="/mou-agreements"
+            className="inline-flex items-center px-6 py-3 bg-[#0a0e72] text-white font-medium rounded-lg hover:bg-blue-800 transition-colors duration-300"
+          >
+            View All MOU Agreements
+            <ChevronRight className="w-5 h-5" />
+          </Link>
+        </div>
 
         {/* View All Button (Duplicate for mobile view) */}
         <div className="mt-12 text-center md:hidden">
@@ -150,7 +154,7 @@ const MouSection: React.FC = () => {
             className="inline-flex items-center px-6 py-3 bg-[#0a0e72] text-white font-medium rounded-lg hover:bg-blue-800 transition-colors duration-300"
           >
             View All MOU Agreements
-            <ExternalLink className="ml-2 w-4 h-4" />
+            <ChevronRight className="w-5 h-5" />
           </Link>
         </div>
       </div>

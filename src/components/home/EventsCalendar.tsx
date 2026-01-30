@@ -1,5 +1,5 @@
 // src/components/EventsCalendar.jsx
-import { MapPin, Users, Clock, ExternalLink } from "lucide-react";
+import { MapPin, Users, Clock, ExternalLink, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const EventsCalendar = () => {
@@ -104,6 +104,7 @@ const EventsCalendar = () => {
             className="inline-flex items-center px-6 py-3 bg-[#0a0e72] text-white rounded-lg hover:bg-[#080b5a] transition-colors font-medium"
           >
             View All Events
+            <ChevronRight className="w-5 h-5" />
           </Link>
         </div>
       </div>

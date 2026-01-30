@@ -168,7 +168,7 @@ const SuccessStoriesGrid = () => {
                     </h3>
                     <span
                       className={`flex items-center gap-1 ml-2 px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(
-                        story.status
+                        story.status,
                       )}`}
                     >
                       {getStatusIcon(story.status)}
@@ -202,10 +202,10 @@ const SuccessStoriesGrid = () => {
         </div>
 
         {/* View All Button */}
-        <div className="text-center">
+        <div className="text-center mt-6">
           <Link
             to="/success-stories"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0e72] text-white rounded-lg hover:bg-[#080b5a] transition-colors font-semibold text-lg"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#0a0e72] text-white rounded-lg hover:bg-[#080b5a] transition-colors font-semibold text-lg"
           >
             View All Success Stories
             <ChevronRight className="w-5 h-5" />

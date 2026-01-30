@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { ExternalLink } from "lucide-react";
+
 
 interface PartnerLogo {
   id: number;
@@ -31,15 +30,6 @@ const SupportersPartners: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-wide">
             SUPPORTERS & PARTNERS
           </h2>
-          <div className="mt-6">
-            <Link
-              to="/mou-agreements"
-              className="inline-flex items-center px-6 py-3 bg-[#0a0e72] text-white font-medium rounded-lg hover:bg-blue-800 transition-colors duration-300"
-            >
-              View All MOU
-              <ExternalLink className="ml-2 w-4 h-4" />
-            </Link>
-          </div>
           <div className="mt-3 flex justify-center">
             <div className="w-20 h-1 bg-orange-500 rounded-full"></div>
           </div>
@@ -63,17 +53,6 @@ const SupportersPartners: React.FC = () => {
               />
             </div>
           ))}
-        </div>
-
-        {/* View All MOU Button (Mobile view) */}
-        <div className="mt-8 text-center md:hidden">
-          <Link
-            to="/mou-agreements"
-            className="inline-flex items-center px-6 py-3 bg-[#0a0e72] text-white font-medium rounded-lg hover:bg-blue-800 transition-colors duration-300"
-          >
-            View All MOU
-            <ExternalLink className="ml-2 w-4 h-4" />
-          </Link>
         </div>
       </div>
     </section>
