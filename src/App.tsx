@@ -30,6 +30,7 @@ import Disclaimer from "./components/policies/Disclaimer";
 import GrievanceRedressal from "./components/policies/GrievanceRedressal";
 import Footer from "./components/Footer.js";
 import SupportersPartners from "./components/SupportersPartners";
+import MouSection from "./components/home/MouSection";
 import Clubs from "./components/students/Clubs";
 import CommitteeList from "./components/students/CommitteeList";
 import CommitteeDetails from "./components/students/CommitteeDetails";
@@ -71,6 +72,7 @@ function App() {
               <SuccessStoriesGrid />
               <RecognitionGrid />
               <EventsGallery />
+              <MouSection />
               <SupportersPartners />
             </main>
           }
