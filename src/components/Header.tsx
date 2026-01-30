@@ -163,12 +163,18 @@ const Header = () => {
           <div className="hidden lg:grid grid-cols-[auto_1fr] items-center">
             {/* LOGO */}
             <div className="row-span-2 flex items-center gap-3 py-3 pr-6">
-              <img src="/logo.svg" alt="COE" className="h-20 sm:h-24 lg:h-28 w-auto" />
+              <img
+                src="/logo.svg"
+                alt="COE"
+                className="h-20 sm:h-24 lg:h-28 w-auto"
+              />
               <div>
                 <div className="text-[#0a0e72] font-bold text-base sm:text-lg lg:text-xl">
                   Centre of Excellence
                 </div>
-                <div className="text-gray-600 text-xs sm:text-sm">Gujarat University</div>
+                <div className="text-gray-600 text-xs sm:text-sm">
+                  School of Law, Gujarat University
+                </div>
               </div>
             </div>
 
@@ -187,8 +193,14 @@ const Header = () => {
                           key={idx}
                           href={sub.url}
                           className="block px-4 py-2 text-sm hover:bg-[#0a0e72] hover:text-white transition-colors"
-                          target={sub.url.startsWith('http') ? "_blank" : "_self"}
-                          rel={sub.url.startsWith('http') ? "noopener noreferrer" : ""}
+                          target={
+                            sub.url.startsWith("http") ? "_blank" : "_self"
+                          }
+                          rel={
+                            sub.url.startsWith("http")
+                              ? "noopener noreferrer"
+                              : ""
+                          }
                         >
                           {sub.name}
                         </a>
@@ -205,8 +217,8 @@ const Header = () => {
                 {mainMenus.map((item, index) => (
                   <div key={index} className="relative group">
                     {item.link ? (
-                      <Link 
-                        to={item.link} 
+                      <Link
+                        to={item.link}
                         className="font-semibold hover:text-[#0a0e72] transition-colors"
                       >
                         {item.name}
@@ -223,8 +235,8 @@ const Header = () => {
                         <div className="bg-white border rounded-xl shadow-2xl p-4 sm:p-5">
                           {Array.isArray(item.submenu) ? (
                             <div className="min-w-[200px] sm:min-w-[220px]">
-                              {item.submenu.map((sub, i) => (
-                                typeof sub === 'string' ? (
+                              {item.submenu.map((sub, i) =>
+                                typeof sub === "string" ? (
                                   <span
                                     key={i}
                                     className="block px-4 py-2 rounded text-gray-500 text-sm"
@@ -239,8 +251,8 @@ const Header = () => {
                                   >
                                     {sub.label}
                                   </Link>
-                                )
-                              ))}
+                                ),
+                              )}
                             </div>
                           ) : (
                             (() => {
@@ -254,8 +266,8 @@ const Header = () => {
                               return (
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 sm:gap-x-10 min-w-[300px] sm:min-w-[440px]">
                                   <div>
-                                    {left.map((sub, i) => (
-                                      typeof sub === 'string' ? (
+                                    {left.map((sub, i) =>
+                                      typeof sub === "string" ? (
                                         <span
                                           key={i}
                                           className="block px-4 py-2 rounded text-gray-500 text-sm"
@@ -270,12 +282,12 @@ const Header = () => {
                                         >
                                           {sub.label}
                                         </Link>
-                                      )
-                                    ))}
+                                      ),
+                                    )}
                                   </div>
                                   <div>
-                                    {right.map((sub, i) => (
-                                      typeof sub === 'string' ? (
+                                    {right.map((sub, i) =>
+                                      typeof sub === "string" ? (
                                         <span
                                           key={i}
                                           className="block px-4 py-2 rounded text-gray-500 text-sm"
@@ -290,8 +302,8 @@ const Header = () => {
                                         >
                                           {sub.label}
                                         </Link>
-                                      )
-                                    ))}
+                                      ),
+                                    )}
                                   </div>
                                 </div>
                               );
@@ -311,7 +323,7 @@ const Header = () => {
                 Apply Now
               </a>
 
-              <button 
+              <button
                 className="xl:hidden p-2 hover:bg-gray-100 rounded-md transition-colors"
                 onClick={() => setIsMenuOpen(true)}
                 aria-label="Open menu"
@@ -326,12 +338,14 @@ const Header = () => {
             <div className="flex items-center gap-3">
               <img src="/logo.svg" alt="COE" className="h-16 w-auto" />
               <div>
-                <div className="text-[#0a0e72] font-bold text-base">Centre of Excellence</div>
+                <div className="text-[#0a0e72] font-bold text-base">
+                  Centre of Excellence
+                </div>
                 <div className="text-gray-600 text-xs">Gujarat University</div>
               </div>
             </div>
-            
-            <button 
+
+            <button
               className="p-2 hover:bg-gray-100 rounded-md transition-colors"
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"
@@ -345,18 +359,18 @@ const Header = () => {
         {isMenuOpen && (
           <>
             {/* Backdrop */}
-            <div 
+            <div
               className="fixed inset-0 bg-black bg-opacity-50 z-50 lg:hidden"
               onClick={closeMobileMenu}
             />
-            
+
             {/* Drawer */}
             <div className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white shadow-xl lg:hidden transform transition-transform duration-300 ease-in-out">
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-4 border-b">
                   <h2 className="text-lg font-semibold text-[#0a0e72]">Menu</h2>
-                  <button 
+                  <button
                     className="p-2 hover:bg-gray-100 rounded-md transition-colors"
                     onClick={closeMobileMenu}
                     aria-label="Close menu"
@@ -370,17 +384,23 @@ const Header = () => {
                   <div className="p-4">
                     {/* Top Bar Menus - Mobile */}
                     <div className="mb-6">
-                      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Quick Links</h3>
+                      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                        Quick Links
+                      </h3>
                       <div className="space-y-1">
                         {topBarMenus.map((menu, i) => (
                           <div key={i}>
                             <button
                               className="w-full flex items-center justify-between p-3 text-left rounded-lg hover:bg-gray-50 transition-colors"
-                              onClick={() => setActiveTopBarMenu(activeTopBarMenu === i ? null : i)}
+                              onClick={() =>
+                                setActiveTopBarMenu(
+                                  activeTopBarMenu === i ? null : i,
+                                )
+                              }
                             >
                               <span className="font-medium">{menu.name}</span>
-                              <ChevronDown 
-                                className={`w-4 h-4 transition-transform ${activeTopBarMenu === i ? 'rotate-180' : ''}`} 
+                              <ChevronDown
+                                className={`w-4 h-4 transition-transform ${activeTopBarMenu === i ? "rotate-180" : ""}`}
                               />
                             </button>
                             {activeTopBarMenu === i && (
@@ -390,8 +410,16 @@ const Header = () => {
                                     key={idx}
                                     href={sub.url}
                                     className="block p-2 text-sm text-gray-600 hover:text-[#0a0e72] hover:bg-gray-50 rounded transition-colors"
-                                    target={sub.url.startsWith('http') ? "_blank" : "_self"}
-                                    rel={sub.url.startsWith('http') ? "noopener noreferrer" : ""}
+                                    target={
+                                      sub.url.startsWith("http")
+                                        ? "_blank"
+                                        : "_self"
+                                    }
+                                    rel={
+                                      sub.url.startsWith("http")
+                                        ? "noopener noreferrer"
+                                        : ""
+                                    }
                                     onClick={closeMobileMenu}
                                   >
                                     {sub.name}
@@ -406,7 +434,9 @@ const Header = () => {
 
                     {/* Main Navigation - Mobile */}
                     <div className="mb-6">
-                      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Navigation</h3>
+                      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                        Navigation
+                      </h3>
                       <nav className="space-y-1">
                         {mainMenus.map((item, index) => (
                           <div key={index}>
@@ -422,56 +452,61 @@ const Header = () => {
                               <>
                                 <button
                                   className="w-full flex items-center justify-between p-3 font-medium rounded-lg hover:bg-gray-50 transition-colors"
-                                  onClick={() => setActiveMobileMenu(activeMobileMenu === index ? null : index)}
+                                  onClick={() =>
+                                    setActiveMobileMenu(
+                                      activeMobileMenu === index ? null : index,
+                                    )
+                                  }
                                 >
                                   {item.name}
-                                  <ChevronRight 
-                                    className={`w-4 h-4 transition-transform ${activeMobileMenu === index ? 'rotate-90' : ''}`} 
+                                  <ChevronRight
+                                    className={`w-4 h-4 transition-transform ${activeMobileMenu === index ? "rotate-90" : ""}`}
                                   />
                                 </button>
                                 {activeMobileMenu === index && item.submenu && (
                                   <div className="ml-4 mt-1 space-y-1">
-                                    {Array.isArray(item.submenu) ? (
-                                      item.submenu.map((sub, i) => (
-                                        typeof sub === 'string' ? (
-                                          <span
-                                            key={i}
-                                            className="block p-2 text-sm text-gray-500"
-                                          >
-                                            {sub}
-                                          </span>
-                                        ) : (
-                                          <Link
-                                            key={i}
-                                            to={sub.link}
-                                            className="block p-2 text-sm text-gray-600 hover:text-[#0a0e72] hover:bg-gray-50 rounded transition-colors"
-                                            onClick={closeMobileMenu}
-                                          >
-                                            {sub.label}
-                                          </Link>
+                                    {Array.isArray(item.submenu)
+                                      ? item.submenu.map((sub, i) =>
+                                          typeof sub === "string" ? (
+                                            <span
+                                              key={i}
+                                              className="block p-2 text-sm text-gray-500"
+                                            >
+                                              {sub}
+                                            </span>
+                                          ) : (
+                                            <Link
+                                              key={i}
+                                              to={sub.link}
+                                              className="block p-2 text-sm text-gray-600 hover:text-[#0a0e72] hover:bg-gray-50 rounded transition-colors"
+                                              onClick={closeMobileMenu}
+                                            >
+                                              {sub.label}
+                                            </Link>
+                                          ),
                                         )
-                                      ))
-                                    ) : (
-                                      [...item.submenu.col1, ...item.submenu.col2].map((sub, i) => (
-                                        typeof sub === 'string' ? (
-                                          <span
-                                            key={i}
-                                            className="block p-2 text-sm text-gray-500"
-                                          >
-                                            {sub}
-                                          </span>
-                                        ) : (
-                                          <Link
-                                            key={i}
-                                            to={sub.link}
-                                            className="block p-2 text-sm text-gray-600 hover:text-[#0a0e72] hover:bg-gray-50 rounded transition-colors"
-                                            onClick={closeMobileMenu}
-                                          >
-                                            {sub.label}
-                                          </Link>
-                                        )
-                                      ))
-                                    )}
+                                      : [
+                                          ...item.submenu.col1,
+                                          ...item.submenu.col2,
+                                        ].map((sub, i) =>
+                                          typeof sub === "string" ? (
+                                            <span
+                                              key={i}
+                                              className="block p-2 text-sm text-gray-500"
+                                            >
+                                              {sub}
+                                            </span>
+                                          ) : (
+                                            <Link
+                                              key={i}
+                                              to={sub.link}
+                                              className="block p-2 text-sm text-gray-600 hover:text-[#0a0e72] hover:bg-gray-50 rounded transition-colors"
+                                              onClick={closeMobileMenu}
+                                            >
+                                              {sub.label}
+                                            </Link>
+                                          ),
+                                        )}
                                   </div>
                                 )}
                               </>
