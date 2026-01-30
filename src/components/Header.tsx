@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import { TopBarMenuItem, MainMenuItem } from "../types";
+import { TopBarMenuItem, MainMenuItem, SubmenuObjectItem } from "../types";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -209,15 +209,30 @@ const Header = () => {
                         <div className="bg-white border rounded-xl shadow-2xl p-5">
                           {Array.isArray(item.submenu) ? (
                             <div className="min-w-[220px]">
-                              {item.submenu.map((sub, i) => (
-                                <Link
-                                  key={i}
-                                  to={sub.link}
-                                  className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white"
-                                >
-                                  {sub.label}
-                                </Link>
-                              ))}
+                              {item.submenu.map((sub, i) => {
+                                if (typeof sub === 'string') {
+                                  return (
+                                    <span
+                                      key={i}
+                                      className="block px-4 py-2 rounded text-gray-500 cursor-not-allowed"
+                                    >
+                                      {sub}
+                                    </span>
+                                  );
+                                }
+                                
+                                // Type assertion - we know it's SubmenuObjectItem here
+                                const subItem = sub as SubmenuObjectItem;
+                                return (
+                                  <Link
+                                    key={i}
+                                    to={subItem.link}
+                                    className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white"
+                                  >
+                                    {subItem.label}
+                                  </Link>
+                                );
+                              })}
                             </div>
                           ) : (
                             (() => {
@@ -231,26 +246,56 @@ const Header = () => {
                               return (
                                 <div className="grid grid-cols-2 gap-x-10 min-w-[440px]">
                                   <div>
-                                    {left.map((sub, i) => (
-                                      <Link
-                                        key={i}
-                                        to={sub.link}
-                                        className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white"
-                                      >
-                                        {sub.label}
-                                      </Link>
-                                    ))}
+                                    {left.map((sub, i) => {
+                                      if (typeof sub === 'string') {
+                                        return (
+                                          <span
+                                            key={i}
+                                            className="block px-4 py-2 rounded text-gray-500 cursor-not-allowed"
+                                          >
+                                            {sub}
+                                          </span>
+                                        );
+                                      }
+                                      
+                                      // Type assertion - we know it's SubmenuObjectItem here
+                                      const subItem = sub as SubmenuObjectItem;
+                                      return (
+                                        <Link
+                                          key={i}
+                                          to={subItem.link}
+                                          className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white"
+                                        >
+                                          {subItem.label}
+                                        </Link>
+                                      );
+                                    })}
                                   </div>
                                   <div>
-                                    {right.map((sub, i) => (
-                                      <Link
-                                        key={i}
-                                        to={sub.link}
-                                        className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white"
-                                      >
-                                        {sub.label}
-                                      </Link>
-                                    ))}
+                                    {right.map((sub, i) => {
+                                      if (typeof sub === 'string') {
+                                        return (
+                                          <span
+                                            key={i}
+                                            className="block px-4 py-2 rounded text-gray-500 cursor-not-allowed"
+                                          >
+                                            {sub}
+                                          </span>
+                                        );
+                                      }
+                                      
+                                      // Type assertion - we know it's SubmenuObjectItem here
+                                      const subItem = sub as SubmenuObjectItem;
+                                      return (
+                                        <Link
+                                          key={i}
+                                          to={subItem.link}
+                                          className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white"
+                                        >
+                                          {subItem.label}
+                                        </Link>
+                                      );
+                                    })}
                                   </div>
                                 </div>
                               );
