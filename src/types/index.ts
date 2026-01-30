@@ -41,7 +41,7 @@ export interface TopBarMenuItem {
   submenu: TopBarSubmenuItem[];
 }
 
-interface SubmenuObjectItem {
+export interface SubmenuObjectItem {
   label: string;
   link: string;
 }

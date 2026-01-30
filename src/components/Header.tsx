@@ -148,137 +148,128 @@ const Header = () => {
 
   return (
     <>
-      {/* ================= TOP BAR ================= */}
-      <div className="hidden lg:block bg-gray-100 border-b text-sm">
-        <div className="max-w-[1600px] mx-auto px-6 py-2 flex justify-end gap-6">
-          {topBarMenus.map((menu, i) => (
-            <div key={i} className="relative group">
-              <span className="flex items-center gap-1 cursor-pointer font-medium">
-                {menu.name}
-                <ChevronDown className="w-3 h-3" />
-              </span>
-
-              <div className="absolute right-0 top-full pt-3 hidden group-hover:block z-[60]">
-                <div className="bg-white border rounded-xl shadow-2xl w-64 py-2">
-                  {menu.submenu.map((sub, idx) => (
-                    <a
-                      key={idx}
-                      href={sub.url}
-                      className="block px-4 py-2 hover:bg-[#0a0e72] hover:text-white whitespace-nowrap"
-                    >
-                      {sub.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* ================= HEADER ================= */}
       <header className="sticky top-0 z-50 bg-white border-b">
-        <div className="max-w-[1600px] mx-auto px-4 lg:px-6">
-          <div className="flex justify-between items-center h-14 lg:h-20">
-            {/* Logo */}
-            <div className="flex items-center gap-2">
-              <img src="/logo.svg" alt="COE" className="h-11 lg:h-16" />
-              <h1 className="hidden md:block font-semibold text-[#0a0e72]">
-                Centre of Excellence
-                <p className="hidden md:block text-gray-600 text-[12px]">
-                  Gujarat University
-                </p>
-              </h1>
+        <div className="max-w-[1600px] mx-auto px-6">
+          <div className="grid grid-cols-[auto_1fr] items-center">
+            {/* LOGO */}
+            <div className="row-span-2 flex items-center gap-3 py-3 pr-6">
+              <img src="/logo.svg" alt="COE" className="h-24 lg:h-28 w-auto" />
+              <div>
+                <div className="text-[#0a0e72] font-bold text-lg">
+                  Centre of Excellence
+                </div>
+                <div className="text-gray-600 text-sm">Gujarat University</div>
+              </div>
             </div>
 
-            {/* Desktop Nav */}
-            <nav className="hidden xl:flex gap-10">
-              {mainMenus.map((item, index) => (
-                <div key={index} className="relative group">
-                  {item.link ? (
-                    <Link to={item.link} className="font-semibold">
-                      {item.name}
-                    </Link>
-                  ) : (
-                    <span className="flex items-center gap-1 font-semibold cursor-pointer">
-                      {item.name}
-                      <ChevronDown className="w-4 h-4" />
-                    </span>
-                  )}
-
-                  {item.submenu && (
-                    <div className="absolute left-1/2 transform -translate-x-1/2 top-full pt-2 hidden group-hover:block">
-                      <div className="bg-white border rounded-lg shadow-xl p-4 w-max max-w-[90vw] overflow-x-hidden">
-                        {Array.isArray(item.submenu) ? (
-                          item.submenu.map((sub, i) => {
-                            // Type guard to ensure sub is a SubmenuObjectItem
-                            if (
-                              typeof sub === "object" &&
-                              sub !== null &&
-                              "link" in sub &&
-                              "label" in sub
-                            ) {
-                              const submenuItem = sub as {
-                                label: string;
-                                link: string;
-                              };
-                              return (
-                                <Link
-                                  key={i}
-                                  to={submenuItem.link}
-                                  className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap"
-                                >
-                                  {submenuItem.label}
-                                </Link>
-                              );
-                            }
-                            return null;
-                          })
-                        ) : (
-                          <div className="grid grid-cols-2 gap-x-8 gap-y-2">
-                            {[...item.submenu.col1, ...item.submenu.col2].map(
-                              (sub, i) => {
-                                // Type guard to ensure sub is a SubmenuObjectItem
-                                if (
-                                  typeof sub === "object" &&
-                                  sub !== null &&
-                                  "link" in sub &&
-                                  "label" in sub
-                                ) {
-                                  const submenuItem = sub as {
-                                    label: string;
-                                    link: string;
-                                  };
-                                  return (
-                                    <Link
-                                      key={i}
-                                      to={submenuItem.link}
-                                      className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white whitespace-nowrap"
-                                    >
-                                      {submenuItem.label}
-                                    </Link>
-                                  );
-                                }
-                                return null;
-                              }
-                            )}
-                          </div>
-                        )}
-                      </div>
+            {/* TOP BAR */}
+            <div className="flex justify-end gap-6 text-sm py-2 border-b">
+              {topBarMenus.map((menu, i) => (
+                <div key={i} className="relative group">
+                  <span className="flex items-center gap-1 font-medium cursor-pointer">
+                    {menu.name}
+                    <ChevronDown className="w-3 h-3" />
+                  </span>
+                  <div className="absolute right-0 top-full pt-3 hidden group-hover:block z-50">
+                    <div className="bg-white border rounded-xl shadow-2xl w-64 py-2">
+                      {menu.submenu.map((sub, idx) => (
+                        <a
+                          key={idx}
+                          href={sub.url}
+                          className="block px-4 py-2 hover:bg-[#0a0e72] hover:text-white"
+                        >
+                          {sub.name}
+                        </a>
+                      ))}
                     </div>
-                  )}
+                  </div>
                 </div>
               ))}
-            </nav>
+            </div>
 
-            {/* Right */}
-            <div className="flex items-center gap-4">
+            {/* MAIN NAV */}
+            <div className="flex justify-end items-center gap-10 py-4">
+              <nav className="hidden xl:flex gap-8">
+                {mainMenus.map((item, index) => (
+                  <div key={index} className="relative group">
+                    {item.link ? (
+                      <Link to={item.link} className="font-semibold">
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <span className="flex items-center gap-1 font-semibold cursor-pointer">
+                        {item.name}
+                        <ChevronDown className="w-4 h-4" />
+                      </span>
+                    )}
+
+                    {item.submenu && (
+                      <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:block z-50">
+                        <div className="bg-white border rounded-xl shadow-2xl p-5">
+                          {Array.isArray(item.submenu) ? (
+                            <div className="min-w-[220px]">
+                              {item.submenu.map((sub, i) => (
+                                <Link
+                                  key={i}
+                                  to={sub.link}
+                                  className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white"
+                                >
+                                  {sub.label}
+                                </Link>
+                              ))}
+                            </div>
+                          ) : (
+                            (() => {
+                              const all = [
+                                ...item.submenu.col1,
+                                ...item.submenu.col2,
+                              ];
+                              const left = all.slice(0, 4);
+                              const right = all.slice(4);
+
+                              return (
+                                <div className="grid grid-cols-2 gap-x-10 min-w-[440px]">
+                                  <div>
+                                    {left.map((sub, i) => (
+                                      <Link
+                                        key={i}
+                                        to={sub.link}
+                                        className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white"
+                                      >
+                                        {sub.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                  <div>
+                                    {right.map((sub, i) => (
+                                      <Link
+                                        key={i}
+                                        to={sub.link}
+                                        className="block px-4 py-2 rounded hover:bg-[#0a0e72] hover:text-white"
+                                      >
+                                        {sub.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              );
+                            })()
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </nav>
+
               <a
                 href="/apply"
                 className="hidden lg:inline-flex px-4 py-2 bg-[#0a0e72] text-white rounded-md"
               >
                 Apply Now
               </a>
+
               <button className="xl:hidden" onClick={() => setIsMenuOpen(true)}>
                 <Menu />
               </button>
@@ -286,87 +277,6 @@ const Header = () => {
           </div>
         </div>
       </header>
-
-      {/* ================= MOBILE MENU ================= */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/40 xl:hidden">
-          <div className="absolute right-0 top-0 h-full w-72 bg-white shadow-xl p-4 overflow-y-auto">
-            <div className="flex justify-end mb-4">
-              <button onClick={() => setIsMenuOpen(false)}>
-                <X />
-              </button>
-            </div>
-
-            <nav className="space-y-4">
-              {mainMenus.map((menu, index) => (
-                <div key={index}>
-                  {menu.submenu ? (
-                    <>
-                      <button
-                        className="flex w-full justify-between font-semibold py-2"
-                        onClick={() =>
-                          setActiveMobileMenu(
-                            activeMobileMenu === index ? null : index
-                          )
-                        }
-                      >
-                        {menu.name}
-                        <ChevronDown
-                          className={`w-4 h-4 transition ${
-                            activeMobileMenu === index ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-
-                      {activeMobileMenu === index && (
-                        <div className="ml-3 space-y-2">
-                          {(Array.isArray(menu.submenu)
-                            ? menu.submenu
-                            : [...menu.submenu.col1, ...menu.submenu.col2]
-                          ).map((sub, i) => {
-                            if (
-                              typeof sub === "object" &&
-                              sub !== null &&
-                              "link" in sub &&
-                              "label" in sub
-                            ) {
-                              const submenuItem = sub as {
-                                label: string;
-                                link: string;
-                              };
-                              return (
-                                <Link
-                                  key={i}
-                                  to={submenuItem.link}
-                                  onClick={() => setIsMenuOpen(false)}
-                                  className="block text-sm text-gray-700"
-                                >
-                                  {submenuItem.label}
-                                </Link>
-                              );
-                            }
-                            return null;
-                          })}
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    menu.link && (
-                      <Link
-                        to={menu.link}
-                        onClick={() => setIsMenuOpen(false)}
-                        className="block font-semibold py-2"
-                      >
-                        {menu.name}
-                      </Link>
-                    )
-                  )}
-                </div>
-              ))}
-            </nav>
-          </div>
-        </div>
-      )}
     </>
   );
 };
